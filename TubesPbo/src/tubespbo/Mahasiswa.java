@@ -20,6 +20,7 @@ public class Mahasiswa extends Orang {
     
     public String getIdMahasiswa() {
         return idMahasiswa;
+        
     }
 
     public void setIdMahasiswa(String idMahasiswa) {
@@ -39,6 +40,9 @@ public class Mahasiswa extends Orang {
         
     }
     
+    public void setRevisi(Mahasiswa nama, TugasAkhir judul){
+        
+    }
     public TugasAkhir getTugasAkhir(){
         return tugasAkhir;
     }
