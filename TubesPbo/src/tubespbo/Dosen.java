@@ -12,6 +12,7 @@ package tubespbo;
 public class Dosen extends Orang {
     private KelompokTA[] topikTA;
     private String idDosen;
+    private int status;
     
     public Dosen(String nama,int tanggalLahir,double noHandphone,String jenisKelamin,String idDosen,int n){
        super(nama,tanggalLahir,noHandphone,jenisKelamin);
@@ -19,8 +20,11 @@ public class Dosen extends Orang {
        KelompokTA[] topikTA=new KelompokTA[n];
     }
     
-    public void statusDosen(int status){
-        
+    public void setStatusDosen(int status){
+        this.status=status;
+    }
+    public int getStatusDosem(){
+        return status;
     }
 
     public String getIdDosen() {
@@ -30,10 +34,10 @@ public class Dosen extends Orang {
     public void setIdDosen(String idDosen) {
         this.idDosen = idDosen;
     }
-     public int nomerTopik=0;
-    public void createKelompokTA(String topik,int n){
+    public int nomerTopik=0;
+    public void createKelompokTA(String topik,int urutanKlmpk,String namaKelompok){
         if (nomerTopik < topikTA.length){
-        topikTA[nomerTopik]=new KelompokTA(topik,n);
+        topikTA[nomerTopik]=new KelompokTA(topik,urutanKlmpk,namaKelompok);
         nomerTopik++;
         }
     }
@@ -43,28 +47,35 @@ public class Dosen extends Orang {
    }
    
    
-   public Dosen getKelompokTA (int idx){
+   public KelompokTA getKelompokTA (int idx){
        return topikTA[idx];
    }
    
-   public Dosen getKelompok(String topik){
-    Dosen a = null;
-    for (int i = 0; i <= KelompokTA.length; i++){
-        if (KelompokTA[i].getTopik().equals(topik)){
-            a = KelompokTA[i];
-        } else {
-            a = null;
+   public String getKelompok(String topik){
+    for (int i = 0; i <= topikTA.length; i++){
+        if (topikTA[i].getTopik() == topik){
+            return  topikTA[i].getNamaKelompok();
         }
     }
-    return a;
+    return "Tidak ada topik tersebut";
+    
    }
    
-   public void deleteKelompok(int idx){
-       if ((KelompokTA.length<=idx) && (idx<0)){
-           KelompokTA[idx]=null;
-           System.out.println("kelompok ke "+(idx+1)+" telah dihapus");
+   /*public void deleteKelompok(int urutanKlmpk){
+       if ((topikTA.length <= urutanKlmpk) && (urutanKlmpk < 0)){
+           topikTA[urutanKlmpk]=null;
+           System.out.println("kelompok ke "+(urutanKlmpk+1)+" telah dihapus");
        } else {
            System.out.println("kelompok tidak dapat dihapus");
+       }
+   }*/
+   
+   public void deleteKelompok(int urutanKlmpk){
+       if (topikTA[urutanKlmpk]!= null){
+           for (int i=urutanKlmpk ; i < topikTA.length && topikTA[urutanKlmpk+1] != null ; i++ ){
+               topikTA[i]=topikTA[i+1];
+               topikTA[i+1]=null;
+           }
        }
    }
    
