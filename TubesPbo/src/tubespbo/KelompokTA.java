@@ -16,11 +16,11 @@ public class KelompokTA {
     private Mahasiswa[] anggota;
     private String namaKelompok;
 
-    public KelompokTA(/*String namaKelompok,*/String topik, int n, String namaKelompok) {
+    public KelompokTA(/*String namaKelompok,*/String topik, String namaKelompok, int n) {
         //this.namaKelompok=namaKelompok;
         this.topik = topik;
         this.namaKelompok = namaKelompok;
-        Mahasiswa[] anggota = new Mahasiswa[n];
+        anggota = new Mahasiswa[n];
     }
 
     public String getTopik() {
@@ -42,21 +42,34 @@ public class KelompokTA {
     public int jumAnggota = 0;
 
     public void addAnggota(Mahasiswa m) {
-        anggota[jumAnggota] = m;
-        jumAnggota++;
+        if (jumAnggota < anggota.length) {
+            anggota[jumAnggota] = m;
+            jumAnggota++;
+        }
     }
 
-    public Mahasiswa getAnggota(int idx) {
-        return anggota[idx];
+    public String getAnggota(int idx) {
+        return anggota[idx].getNama();
     }
 
-    public String getAnggota(String idMahasiswa) {
+   /* public String getAnggota(String idMahasiswa) {
         for (int i = 0; i <= anggota.length; i++) {
             if (anggota[i].getIdMahasiswa() == idMahasiswa) {
                 return anggota[i].getNama();
             }
         }
         return "tidak ada Nim tersebut";
+    }*/
+    public String getKelompok(String idMahasiswa) {
+        for (int i = 0; i < anggota.length; i++) {
+            if (anggota[i] != null) {
+                if (anggota[i].getIdMahasiswa() == idMahasiswa) {
+                    return anggota[i].getNama();
+                }
+            }
+            //else{return "tidak ada";}
+        }
+        return "Tidak ada idMahasiswa tersebut";
     }
 
     /* public void removeAnggota(int idx){
@@ -67,7 +80,7 @@ public class KelompokTA {
            System.out.println("anggota tidak dapat dihapus");
        }
    }*/
-    public void removeAnggota(int idx) {
+    /*public void removeAnggota(int idx) {
         if (anggota[idx] != null) {
             for (int i = idx; i < anggota.length && anggota[idx + 1] != null; i++) {
                 anggota[i] = anggota[i + 1];
@@ -75,6 +88,19 @@ public class KelompokTA {
             }
         }
 
+    }*/
+    public void removeAnggota(int idx) {
+        if (anggota[idx] != null){
+            if (anggota[idx+1] == null){
+                anggota[idx]=null;
+            }
+            else{
+                for(int j=idx; j<anggota.length && anggota[idx+1] != null ; j++){
+                    anggota[j]=anggota[j+idx];
+                    anggota[j+idx]=null;
+                }
+        }
     }
 
+}
 }

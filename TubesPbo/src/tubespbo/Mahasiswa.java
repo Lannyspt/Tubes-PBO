@@ -14,8 +14,8 @@ public class Mahasiswa extends Orang {
     private String idMahasiswa;
     private String status;
 
-    public Mahasiswa(String nama,int tanggalLahir,double noHandphone,String jenisKelamin,String idMahasiswa){
-      super(nama,tanggalLahir,noHandphone,jenisKelamin);
+    public Mahasiswa(String nama,String noHandphone,String jenisKelamin,String idMahasiswa){
+      super(nama,noHandphone,jenisKelamin);
       this.idMahasiswa=idMahasiswa;
     }
     public String getIdMahasiswa() {
@@ -25,14 +25,18 @@ public class Mahasiswa extends Orang {
         this.idMahasiswa = idMahasiswa;
     }
     public void createTA(String judulTA){
-        TugasAkhir tugasAkhir=new TugasAkhir(judulTA);
+         tugasAkhir =new TugasAkhir(judulTA);
     }
+    //public TugasAkhir getCreateTA(){
+    //    return tugasAkhir;
+    //} 
     public void setStatusMhs(String status){
         this.status = status;
     }
     public String getStatusMhs(){
         return status;
     }
+    @Override
     public String getJabatan(){
         return "Mahasiswa";
     }

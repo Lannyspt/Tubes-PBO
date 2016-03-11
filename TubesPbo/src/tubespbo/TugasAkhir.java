@@ -16,7 +16,7 @@ public class TugasAkhir {
 
     public TugasAkhir(String judulTA) {
         this.judulTA = judulTA;
-        Dosen[] pembimbing = new Dosen[2];
+        pembimbing = new Dosen[2];
     }
 
     public void setJudulTA(String judulTA) {
@@ -29,25 +29,29 @@ public class TugasAkhir {
 
     public void setPembimbing(Dosen d, int i) {
         if (i == 0) {
-            pembimbing[0] = d;
+            pembimbing[i] = d;
 
+        } else if (i == 1) {
+            pembimbing[i] = d;
         } else {
-            pembimbing[1] = d;
+            System.out.println("Tidak ada tempat untuk pembimbing");
         }
     }
 
-    public Dosen getPembimbing(int n) {
-        return pembimbing[n];
+    public String getPembimbing(int n) {
+        if (pembimbing[n] != null) {
+            return pembimbing[n].getNama();
+        }
+        return "Tidak ada pembimbing";
     }
 
     public String getPembimbing(String nama) {
         for (int i = 0; i <= 1; i++) {
             if (pembimbing[i].getNama() == nama) {
-                return pembimbing[i].getNama();
+                return pembimbing[i].getIdDosen();
             }
 
         }
-
         return "Nama Pembimbing tidak ada";
 
     }
