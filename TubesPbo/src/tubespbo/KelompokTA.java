@@ -15,7 +15,6 @@ public class KelompokTA {
     private String topik;
     private Mahasiswa[] anggota;
     private String namaKelompok;
-
     public KelompokTA(/*String namaKelompok,*/String topik, String namaKelompok, int n) {
         //this.namaKelompok=namaKelompok;
         this.topik = topik;
