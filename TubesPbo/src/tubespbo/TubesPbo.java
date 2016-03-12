@@ -31,7 +31,8 @@ public class TubesPbo {
        System.out.println(d1.getKelompok("ICM")+ " dengan topik pada KK "+d1.getKelompokTA(0));
        System.out.println(d1.getKelompok("SIDE")+ " dengan topik pada KK "+d1.getKelompokTA(1));
        System.out.println(d1.getKelompok("TELE")+ " dengan topik pada KK "+d1.getKelompokTA(2));
-       d1.deleteKelompok(1);
+       d1.deleteKelompok(2);
+        System.out.println(d1.getKelompok("TELE"));
         System.out.println(" ");
         System.out.println(" ");
        
