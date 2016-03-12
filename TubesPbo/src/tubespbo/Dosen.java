@@ -30,7 +30,7 @@ public class Dosen extends Orang {
         this.status = status;
     }
 
-    public int getStatusDosem() {
+    public int getStatusDosen() {
         return status;
     }
 
@@ -68,7 +68,7 @@ public class Dosen extends Orang {
             }
             //else{return "tidak ada";}
         }
-        return "Tidak ada topik";
+        return "kelompok tersebut tidak ada";
 
     }
 
