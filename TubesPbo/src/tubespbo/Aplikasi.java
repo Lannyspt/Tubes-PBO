@@ -16,18 +16,21 @@ public class Aplikasi {
     ArrayList<Dosen> daftarDosen = new ArrayList<>();
     ArrayList<Mahasiswa> daftarMahasiswa = new ArrayList<>();
     
-    public void addDosen(Dosen d){
+    public void addDosen(String nama, String noHandphone, String jenisKelamin, String idDosen,int n){
+        Dosen d=new Dosen(nama,noHandphone,jenisKelamin,idDosen,n);
         daftarDosen.add(d);
     }
 
-    public void addMahasiswa(Mahasiswa M){
-        daftarMahasiswa.add(M);
+    public void addMahasiswa(String nama,String noHandphone,String jenisKelamin,String idMahasiswa){
+        Mahasiswa m=new Mahasiswa(nama,noHandphone,jenisKelamin,idMahasiswa);
+        daftarMahasiswa.add(m);
     }
     
     public String getMahasiswa(String idMahasiswa){
         for (int i = 0; i <= daftarMahasiswa.size(); i++) {
             if (daftarMahasiswa.get(i) != null) {
-                if (daftarMahasiswa.get(i).getIdMahasiswa() == idMahasiswa) {
+                if (daftarMahasiswa.get(i).getIdMahasiswa()==idMahasiswa) {
+                   
                     return daftarMahasiswa.get(i).getNama();
                 }
             }
