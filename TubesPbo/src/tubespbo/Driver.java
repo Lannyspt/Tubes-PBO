@@ -10,5 +10,10 @@ package tubespbo;
  * @author lannyspt
  */
 public class Driver {
+    public static void main(String[] args) {
+        
     
+    Aplikasi A= new Aplikasi();
+    A.mainMenu();
+    }
 }
