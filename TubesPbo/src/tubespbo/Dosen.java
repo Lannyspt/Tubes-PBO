@@ -5,20 +5,22 @@
  */
 package tubespbo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author lannyspt
  */
 public class Dosen extends Orang {
 
-    private KelompokTA[] topikTA;
+    private ArrayList<KelompokTA>topikTA=new ArrayList<>();
     private String idDosen;
     private int status;
 
     public Dosen(String nama, String noHandphone, String jenisKelamin, String idDosen, int n) {
         super(nama, noHandphone, jenisKelamin);
         this.idDosen = idDosen;
-        topikTA = new KelompokTA[n];
+        //topikTA = new KelompokTA[n];
     }
 
     public Dosen(String nama, String noHandphone, String jenisKelamin, String idDosen) {
@@ -41,13 +43,15 @@ public class Dosen extends Orang {
     public void setIdDosen(String idDosen) {
         this.idDosen = idDosen;
     }
-    public int nomerTopik = 0;
-
+   
+    //public int nomerTopik = 0;
     public void createKelompokTA(String topik,String namaKelompok,int urutanKlmpk) {
-        if (nomerTopik < topikTA.length) {
-            topikTA[nomerTopik] = new KelompokTA(topik,namaKelompok,urutanKlmpk);
-            nomerTopik++;
-        }
+        //if (nomerTopik < topikTA.size()) {
+            KelompokTA k=new KelompokTA(topik,namaKelompok,urutanKlmpk);
+            topikTA.add(k);
+            //topikTA.get(nomerTopik) = new KelompokTA(topik,namaKelompok,urutanKlmpk);
+            //nomerTopik++;
+       // }
     }
 
     @Override
@@ -55,15 +59,16 @@ public class Dosen extends Orang {
         return "Dosen";
     }
 
-    public String getKelompokTA(int idx) {
-        return topikTA[idx].getTopik();
+    public KelompokTA getKelompokTA(int idx) {
+        //return topikTA[idx].getTopik();
+        return topikTA.get(idx);
     }
 
     public String getKelompok(String topik) {
-        for (int i = 0; i < topikTA.length; i++) {
-            if (topikTA[i] != null) {
-                if (topikTA[i].getTopik() == topik) {
-                    return topikTA[i].getNamaKelompok();
+        for (int i = 0; i < topikTA.size(); i++) {
+            if (topikTA.get(i) != null) {
+                if (topikTA.get(i).getTopik() == topik) {
+                    return topikTA.get(i).getNamaKelompok();
                 }
             }
             //else{return "tidak ada";}
@@ -73,13 +78,13 @@ public class Dosen extends Orang {
     }
 
     public void deleteKelompok(int urutanKlmpk) {
-        if ((urutanKlmpk < topikTA.length)) { //&& (urutanKlmpk < 0)){
-            topikTA[urutanKlmpk] = null;
+        //if (urutanKlmpk < topikTA.size()) { //&& (urutanKlmpk < 0)){
+            topikTA.remove(urutanKlmpk);
             System.out.println("kelompok ke " + (urutanKlmpk) + " telah dihapus");
-        } else {
-            System.out.println("kelompok tidak dapat dihapus");
+        //} else {
+           // System.out.println("kelompok tidak dapat dihapus");
         }
-    }
+    //}
 
     /* public void deleteKelompok(int urutanKlmpk){
        if (topikTA[urutanKlmpk]!= null){

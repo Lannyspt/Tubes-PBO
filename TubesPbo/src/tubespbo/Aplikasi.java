@@ -20,6 +20,7 @@ public class Aplikasi {
     private int nMahasiswa = 0;
     Scanner s = new Scanner(System.in);
     
+    
     public void addDosen(String nama, String noHandphone, String jenisKelamin, String idDosen){
         Dosen d=new Dosen(nama,noHandphone,jenisKelamin,idDosen);
         daftarDosen.add(d);
@@ -35,7 +36,7 @@ public class Aplikasi {
             if (daftarMahasiswa.get(i) != null) {
                 if (daftarMahasiswa.get(i).getIdMahasiswa()==idMahasiswa) {
                    
-                    return daftarMahasiswa.get(i).getNama;
+                    return daftarMahasiswa.get(i).getNama();
                 }
             }
             //else{return "tidak ada";}
@@ -55,12 +56,12 @@ public class Aplikasi {
         return "Tidak ada idDosen tersebut";
     }
     
-    public void deleteDosen(Dosen d){
-        daftarDosen.remove(d);
+    public void deleteDosen(int index){
+        daftarDosen.remove(index);
     }
     
-    public void deleteMahasiswa(Mahasiswa m){
-        daftarMahasiswa.remove(m);
+    public void deleteMahasiswa(int index){
+        daftarMahasiswa.remove(index);
     }
     
     public void Login(){
@@ -73,7 +74,7 @@ public class Aplikasi {
         System.out.println("1. Tambah Dosen");
         System.out.println("2. Cari Dosen");
         System.out.println("3. Hapus Dosen");
-        System.out.println("4. Kembali ke menu utama");
+        System.out.println("4. Menu KelompokTA");
     }
      
      public void menuShowDosen() {
@@ -87,7 +88,7 @@ public class Aplikasi {
         System.out.println("1. Tambah Mahasiswa");
         System.out.println("2. Cari Mahasiswa");
         System.out.println("3. Hapus Mahasiswa");
-        System.out.println("4. Kembali ke menu utama");
+        System.out.println("4. Buat Tugas Akhir ");
     }
       
     //  public void menuSubMenuMahasiswa() {
@@ -101,7 +102,7 @@ public class Aplikasi {
         System.out.println("====Tugas Akhir====");
         System.out.println("1. Buat Tugas Akhir");
         System.out.println("2. Lihat Tugas Akhir");
-        System.out.println("3. Hapus Tugas ");
+        System.out.println("3. Revisi Judul Tugas Akhir");
         System.out.println("4. Kembali ke menu utama");
 
     }
@@ -150,8 +151,111 @@ public class Aplikasi {
                         System.out.println("Masukkan Data Dosen yang akan dicari");
                         System.out.print("ID Dosen : ");
                         String idDosenCari = s.next();
-                        menuShowDosen();
-                        System.out.println("Nama Dosen : "+getDosen(idDosenCari).getNama());            
+                        //menuShowDosen();
+                        System.out.println("Nama Dosen : "+getDosen(idDosenCari));
+                        break;
+                    case 3:
+                        System.out.println("Masukan urutan keberapa Dosen yang akan dihapus ");
+                        System.out.println("Urutan ke- : ");
+                        int index= s.nextInt();
+                        deleteDosen(index);
+                        System.out.println("Dosen tersebut telah di hapus");
+                    case 4:
+                        menuKelompokTA();
+                        System.out.print("Masukkan Pilihan :");
+                        int c=s.nextInt();
+                        switch(c){
+                            case 1:
+                                System.out.println("Masukan indeks ke berapa dosen yang ingin membuat kelompok TA =");
+                                int nomer=s.nextInt();
+                                System.out.println("Masukan Topik kelompok TA = ");
+                                String topik=s.next();
+                                System.out.println("Masukan Nama kelompok = ");
+                                String namaklmpk=s.next();
+                                System.out.println("Masukan urutan kelompok = ");
+                                int urutan = s.nextInt();
+                                daftarDosen.get(nomer).createKelompokTA(topik,namaklmpk,urutan);
+                                break;
+                            case 2:
+                                System.out.println("Cari nama Kelompok berdasarkan Topik TA = ");
+                                String cariTopik=s.next();
+                                System.out.println("Masukan indeks ke berapa dosen yang ingin melihat =");
+                                int nomer2=s.nextInt();
+                                System.out.println("Nama Kelompok adalah "+daftarDosen.get(nomer2).getKelompok(cariTopik));
+                                break;
+                            case 3:
+                                System.out.println("Hapus kelompok berdasarkan urutan = ");
+                                int hapusUrutan=s.nextInt();
+                                System.out.println("Masukan indeks ke berapa dosen yang ingin menghapus =");
+                                int nomer3=s.nextInt();
+                                daftarDosen.get(nomer3).deleteKelompok(hapusUrutan);
+                                break;
+                        }
+                        
+                        
+                }
+            case 2:
+                menuMahasiswa();
+                System.out.print("Masukkan Pilihan :");
+                int d = s.nextInt();
+                switch(d){
+                    case 1:
+                        System.out.println("Masukkan Data Mahasiswa :");
+                        System.out.print("Nama : ");
+                        String nama = s.next();
+                        System.out.print("No HP : ");
+                        String noHandphone = s.next();
+                        System.out.print("Jenis Kelamin : ");
+                        String jenisKelamin = s.next();
+                        System.out.print("ID Mahasiswa  : ");
+                        String idMahasiswa=s.next();
+                        addDosen(nama, noHandphone, jenisKelamin,idMahasiswa);
+                        break;
+                    case 2:
+                        System.out.println("Masukkan Data Mahasiswa yang akan dicari");
+                        System.out.print("ID Mahasiswa : ");
+                        String idMahasiswaCari = s.next();
+                        //menuShowDosen();
+                        System.out.println("Nama Dosen : "+getMahasiswa(idMahasiswaCari));
+                        break;
+                    case 3:
+                        System.out.println("Masukan urutan keberapa Mahasiswa yang akan dihapus ");
+                        System.out.println("Urutan ke- : ");
+                        int index= s.nextInt();
+                        deleteMahasiswa(index);
+                        System.out.println("Mahasiswa tersebut telah di hapus");
+                        break;
+                    case 4:
+                        menuTugasAkhir();
+                        System.out.print("Masukkan Pilihan :");
+                        int e=s.nextInt();
+                        switch(e){
+                            case 1:
+                                System.out.println("Masukan indeks ke berapa mahasiswa yang ingin membuat TugasAkhir =");
+                                int nomer4=s.nextInt();
+                                System.out.println("Masukan JudulTA = ");
+                                String judul=s.next();
+                                daftarMahasiswa.get(nomer4).createTA(judul);
+                                break;
+                            case 2:
+                                System.out.println("Lihat judul TA ");
+                                System.out.println("Masukan indeks ke berapa Mahasiswa yang ingin melihat =");
+                                int nomer5=s.nextInt();
+                                System.out.println("Judul TA adalah "+daftarMahasiswa.get(nomer5).getRevisiTA());
+                                break;
+                            case 3:
+                                System.out.println("Revisi judul Tugas Akhir = ");
+                                String revisiJudul=s.next();
+                                System.out.println("Masukan indeks ke berapa Mahasiswa yang ingin merevisi =");
+                                int nomer6=s.nextInt();
+                                daftarMahasiswa.get(nomer6).revisiTA(revisiJudul);
+                                break;
+                        }
+                }
+                
+        }
+    }
+}
                 
  
     
