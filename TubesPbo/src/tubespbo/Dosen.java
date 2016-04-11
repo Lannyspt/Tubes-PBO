@@ -64,16 +64,16 @@ public class Dosen extends Orang {
         return topikTA.get(idx);
     }
 
-    public String getKelompok(String topik) {
+    public KelompokTA getKelompok(String topik) {
         for (int i = 0; i < topikTA.size(); i++) {
             if (topikTA.get(i) != null) {
-                if (topikTA.get(i).getTopik() == topik) {
-                    return topikTA.get(i).getNamaKelompok();
+                if (topikTA.get(i).getTopik().equals(topik)) {
+                    return topikTA.get(i);//.getNamaKelompok();
                 }
             }
             //else{return "tidak ada";}
         }
-        return "kelompok tersebut tidak ada";
+        return null;
 
     }
 
@@ -95,4 +95,7 @@ public class Dosen extends Orang {
            }
        }
    }*/
+
+    
+    
 }

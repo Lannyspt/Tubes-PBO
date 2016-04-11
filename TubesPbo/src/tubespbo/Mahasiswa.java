@@ -46,6 +46,11 @@ public class Mahasiswa extends Orang {
     public String getRevisiTA(){
         return tugasAkhir.getJudulTA();
     }
+
+    public TugasAkhir getTugasAkhir() {
+        return tugasAkhir;
+    }
+    
   
     
 }

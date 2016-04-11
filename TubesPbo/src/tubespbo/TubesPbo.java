@@ -64,9 +64,9 @@ public class TubesPbo {
         System.out.println(" ");
         
         System.out.println("contoh lain tampilan anggota");
-        System.out.println("Anggota "+d1.getKelompok("ICM")+" adalah "+t1.getKelompok("1301140124"));
-        t1.removeAnggota(1);
-        System.out.println("Anggota "+d1.getKelompok("ICM")+" adalah "+t1.getKelompok("1301140000"));
+        System.out.println("Anggota "+d1.getKelompok("ICM")+" adalah "+t1.getAnggota("1301140124"));
+       // t1.removeAnggota(1);
+        System.out.println("Anggota "+d1.getKelompok("ICM")+" adalah "+t1.getAnggota("1301140000"));
         System.out.println(" ");
         
        // m1.createTA("Expert Teknologi");

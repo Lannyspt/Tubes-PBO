@@ -13,15 +13,27 @@ public class TugasAkhir {
 
     private Dosen[] pembimbing;
     private String judulTA;
+    private String status;
+    
 
     public TugasAkhir(String judulTA) {
         this.judulTA = judulTA;
         pembimbing = new Dosen[2];
+        status = "Belum Lulus";
     }
 
     public void setJudulTA(String judulTA) {
         this.judulTA = judulTA;
     }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+    
 
     public String getJudulTA() {
         return judulTA;
