@@ -66,20 +66,20 @@ public class Dosen extends Orang {
 
     public KelompokTA getKelompok(String topik) {
         for (int i = 0; i < topikTA.size(); i++) {
-            if (topikTA.get(i) != null) {
-                if (topikTA.get(i).getTopik().equals(topik)) {
+          if (topikTA.get(i).getTopik().equals(topik)) {
                     return topikTA.get(i);//.getNamaKelompok();
                 }
             }
-            //else{return "tidak ada";}
+            
+            return null;
         }
-        return null;
+        
 
-    }
+    
 
     public void deleteKelompok(int urutanKlmpk) {
         //if (urutanKlmpk < topikTA.size()) { //&& (urutanKlmpk < 0)){
-            topikTA.remove(urutanKlmpk);
+            topikTA.remove(urutanKlmpk-1);
             System.out.println("kelompok ke " + (urutanKlmpk) + " telah dihapus");
         //} else {
            // System.out.println("kelompok tidak dapat dihapus");

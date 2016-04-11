@@ -5,20 +5,21 @@
  */
 package tubespbo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Martcel
  */
 public class TugasAkhir {
 
-    private Dosen[] pembimbing;
+    private ArrayList<Dosen> pembimbing=new ArrayList<>();
     private String judulTA;
     private String status;
     
 
     public TugasAkhir(String judulTA) {
         this.judulTA = judulTA;
-        pembimbing = new Dosen[2];
         status = "Belum Lulus";
     }
 
@@ -41,30 +42,30 @@ public class TugasAkhir {
 
     public void setPembimbing(Dosen d, int i) {
         if (i == 0) {
-            pembimbing[i] = d;
+            pembimbing.add(d);
 
         } else if (i == 1) {
-            pembimbing[i] = d;
+            pembimbing.add(d);
         } else {
             System.out.println("Tidak ada tempat untuk pembimbing");
         }
     }
 
-    public String getPembimbing(int n) {
-        if (pembimbing[n] != null) {
-            return pembimbing[n].getNama();
+    public Dosen getPembimbing(int n) {
+        if (pembimbing.get(n) != null) {
+            return pembimbing.get(n);
         }
-        return "Tidak ada pembimbing";
+        return null;
     }
 
-    public String getPembimbing(String nama) {
+    public Dosen getPembimbing(String nama) {
         for (int i = 0; i <= 1; i++) {
-            if (pembimbing[i].getNama() == nama) {
-                return pembimbing[i].getIdDosen();
+            if (pembimbing.get(i).getNama() == nama) {
+                return pembimbing.get(i);
             }
 
         }
-        return "Nama Pembimbing tidak ada";
+        return null;
 
     }
 }
