@@ -27,27 +27,26 @@ public class insert_dosen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        konfirm_tambah_dosen = new javax.swing.JOptionPane();
+        jScrollBar1 = new javax.swing.JScrollBar();
+        jPanel1 = new javax.swing.JPanel();
         label_judul = new javax.swing.JLabel();
         label_ID = new javax.swing.JLabel();
-        label_nama = new javax.swing.JLabel();
-        label_nohp = new javax.swing.JLabel();
-        label_jeniskelamin = new javax.swing.JLabel();
         field_ID = new javax.swing.JTextField();
+        label_nama = new javax.swing.JLabel();
         field_nama = new javax.swing.JTextField();
+        label_nohp = new javax.swing.JLabel();
         field_NoHp = new javax.swing.JTextField();
+        label_jeniskelamin = new javax.swing.JLabel();
         L = new javax.swing.JRadioButton();
         P = new javax.swing.JRadioButton();
-        Tambah = new javax.swing.JButton();
         kembali = new javax.swing.JButton();
-
-        konfirm_tambah_dosen.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentAdded(java.awt.event.ContainerEvent evt) {
-                konfirm_tambah_dosenComponentAdded(evt);
-            }
-        });
+        Tambah = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Masukkan Data Dosen");
+        setBackground(new java.awt.Color(153, 0, 0));
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         label_judul.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         label_judul.setText("Tambah Data Dosen");
@@ -64,75 +63,104 @@ public class insert_dosen extends javax.swing.JFrame {
 
         P.setText("P");
 
-        Tambah.setText("Tambahkan");
-
         kembali.setText("kembali");
+
+        Tambah.setText("Tambahkan");
+        Tambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TambahActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_nohp)
+                            .addComponent(label_jeniskelamin))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(L)
+                                .addGap(18, 18, 18)
+                                .addComponent(P))
+                            .addComponent(field_NoHp, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(93, 93, 93)
+                                .addComponent(kembali)
+                                .addGap(30, 30, 30)
+                                .addComponent(Tambah))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(label_nama)
+                                    .addComponent(label_ID))
+                                .addGap(61, 61, 61)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(field_ID, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                                    .addComponent(field_nama))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(62, 62, 62))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(label_judul)
+                .addGap(113, 113, 113))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label_judul)
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_ID)
+                    .addComponent(field_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_nama)
+                    .addComponent(field_nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_nohp)
+                    .addComponent(field_NoHp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_jeniskelamin, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(L)
+                    .addComponent(P))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Tambah)
+                    .addComponent(kembali))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label_nama)
-                    .addComponent(label_ID)
-                    .addComponent(label_nohp)
-                    .addComponent(label_jeniskelamin))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(label_judul)
-                        .addComponent(field_nama)
-                        .addComponent(field_NoHp, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                        .addComponent(field_ID))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(L)
-                        .addGap(18, 18, 18)
-                        .addComponent(P)))
-                .addContainerGap(103, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(kembali)
-                .addGap(18, 18, 18)
-                .addComponent(Tambah)
-                .addGap(39, 39, 39))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(label_judul)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_ID)
-                    .addComponent(field_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_nama)
-                    .addComponent(field_nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_nohp)
-                    .addComponent(field_NoHp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(L)
-                    .addComponent(P)
-                    .addComponent(label_jeniskelamin, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Tambah)
-                    .addComponent(kembali))
-                .addContainerGap(35, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void konfirm_tambah_dosenComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_konfirm_tambah_dosenComponentAdded
-     
-    }//GEN-LAST:event_konfirm_tambah_dosenComponentAdded
+    private void TambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TambahActionPerformed
+        System.out.println("Input berhasil");
+    }//GEN-LAST:event_TambahActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,8 +204,9 @@ public class insert_dosen extends javax.swing.JFrame {
     private javax.swing.JTextField field_ID;
     private javax.swing.JTextField field_NoHp;
     private javax.swing.JTextField field_nama;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JButton kembali;
-    private javax.swing.JOptionPane konfirm_tambah_dosen;
     private javax.swing.JLabel label_ID;
     private javax.swing.JLabel label_jeniskelamin;
     private javax.swing.JLabel label_judul;

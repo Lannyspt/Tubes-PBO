@@ -28,20 +28,24 @@ public class Insert_mahasiswa extends javax.swing.JFrame {
     private void initComponents() {
 
         jOptionPane1 = new javax.swing.JOptionPane();
+        jPanel1 = new javax.swing.JPanel();
         label_judul = new javax.swing.JLabel();
         label_nama = new javax.swing.JLabel();
-        label_nohp = new javax.swing.JLabel();
-        label_jeniskelamin = new javax.swing.JLabel();
-        label_NIM = new javax.swing.JLabel();
         field_nama = new javax.swing.JTextField();
+        label_nohp = new javax.swing.JLabel();
         filed_NoHp = new javax.swing.JTextField();
+        label_jeniskelamin = new javax.swing.JLabel();
         L = new javax.swing.JRadioButton();
         P = new javax.swing.JRadioButton();
+        label_NIM = new javax.swing.JLabel();
         field_NIM = new javax.swing.JTextField();
         Tambah = new javax.swing.JButton();
         Kembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tambah Data Mahasiswa");
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         label_judul.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         label_judul.setText("Tambahkan Data Mahasiswa");
@@ -52,79 +56,102 @@ public class Insert_mahasiswa extends javax.swing.JFrame {
 
         label_jeniskelamin.setText("Jenis Kelamin");
 
-        label_NIM.setText("ID Mahasiswa");
-
         L.setText("L");
 
         P.setText("P");
 
+        label_NIM.setText("ID Mahasiswa");
+
         Tambah.setText("Tambahkan");
 
         Kembali.setText("Kembali");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(label_nama)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                                .addComponent(label_judul)
+                                .addGap(76, 76, 76))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(48, 48, 48)
+                                .addComponent(field_nama)
+                                .addGap(92, 92, 92))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(label_jeniskelamin)
+                        .addGap(18, 18, 18)
+                        .addComponent(L)
+                        .addGap(18, 18, 18)
+                        .addComponent(P)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(Kembali)
+                                .addGap(27, 27, 27)
+                                .addComponent(Tambah))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(label_NIM)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(field_NIM))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(label_nohp)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(filed_NoHp)))
+                        .addGap(92, 92, 92))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(label_judul)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_nama)
+                    .addComponent(field_nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_nohp)
+                    .addComponent(filed_NoHp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_jeniskelamin)
+                    .addComponent(L)
+                    .addComponent(P))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_NIM)
+                    .addComponent(field_NIM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Tambah)
+                    .addComponent(Kembali))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(label_judul))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_nama)
-                            .addComponent(label_nohp)
-                            .addComponent(label_jeniskelamin)
-                            .addComponent(label_NIM))
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(L)
-                                .addGap(18, 18, 18)
-                                .addComponent(P))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(Kembali)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(Tambah))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(field_nama)
-                                    .addComponent(filed_NoHp, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)))
-                            .addComponent(field_NIM))))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(label_judul)
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_nama)
-                    .addComponent(field_nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_nohp)
-                    .addComponent(filed_NoHp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_jeniskelamin)
-                    .addComponent(L)
-                    .addComponent(P))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_NIM)
-                    .addComponent(field_NIM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Tambah)
-                    .addComponent(Kembali))
-                .addGap(21, 21, 21))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -171,6 +198,7 @@ public class Insert_mahasiswa extends javax.swing.JFrame {
     private javax.swing.JTextField field_nama;
     private javax.swing.JTextField filed_NoHp;
     private javax.swing.JOptionPane jOptionPane1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel label_NIM;
     private javax.swing.JLabel label_jeniskelamin;
     private javax.swing.JLabel label_judul;
