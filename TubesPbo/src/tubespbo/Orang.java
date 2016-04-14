@@ -11,13 +11,11 @@ package tubespbo;
  */
 public abstract class Orang {
     private String nama;
-    private int tanggalLahir;
-    private double noHandphone;
+    private String noHandphone;
     private String jenisKelamin;
     
-    public Orang(String nama,int tanggalLahir,double noHandphone,String jenisKelamin){
+    public Orang(String nama,String noHandphone,String jenisKelamin){
         this.nama=nama;
-        this.tanggalLahir=tanggalLahir;
         this.noHandphone=noHandphone;
         this.jenisKelamin=jenisKelamin;
 }
@@ -27,20 +25,11 @@ public abstract class Orang {
     public String getNama(){
         return nama;
     }
-
-    public int getTanggalLahir() {
-        return tanggalLahir;
-    }
-
-    public void setTanggalLahir(int tanggalLahir) {
-        this.tanggalLahir = tanggalLahir;
-    }
-
-    public double getNoHandphone() {
+    public String getNoHandphone() {
         return noHandphone;
     }
 
-    public void setNoHandphone(double noHandphone) {
+    public void setNoHandphone(String noHandphone) {
         this.noHandphone = noHandphone;
     }
 

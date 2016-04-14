@@ -7,44 +7,50 @@ package tubespbo;
 
 /**
  *
- * @author USER
+ * @author Martcel
  */
 public class Mahasiswa extends Orang {
     private TugasAkhir tugasAkhir;
     private String idMahasiswa;
+    private String status;
 
-    public Mahasiswa(String nama,int tanggalLahir,double noHandphone,String jenisKelamin,String idMahasiswa){
-      super(nama,tanggalLahir,noHandphone,jenisKelamin);
+    public Mahasiswa(String nama,String noHandphone,String jenisKelamin,String idMahasiswa){
+      super(nama,noHandphone,jenisKelamin);
       this.idMahasiswa=idMahasiswa;
     }
-    
     public String getIdMahasiswa() {
         return idMahasiswa;
-        
     }
-
     public void setIdMahasiswa(String idMahasiswa) {
         this.idMahasiswa = idMahasiswa;
     }
-    public void createTA(String judul){
-        TugasAkhir t=new TugasAkhir(judul);
+    public void createTA(String judulTA){
+         tugasAkhir =new TugasAkhir(judulTA);
     }
-    
-    public void statusMhs(String status){
-        
+    //public TugasAkhir getCreateTA(){
+    //    return tugasAkhir;
+    //} 
+    public void setStatusMhs(String status){
+        this.status = status;
     }
+    public String getStatusMhs(){
+        return status;
+    }
+    @Override
     public String getJabatan(){
         return "Mahasiswa";
     }
-    public void revisiTA(Mahasiswa nama,TugasAkhir judul){
-        
+    public void revisiTA(String judul){
+         tugasAkhir.setJudulTA(judul);   
     }
-    
-    public void setRevisi(Mahasiswa nama, TugasAkhir judul){
-        
+    public String getRevisiTA(){
+        return tugasAkhir.getJudulTA();
     }
-    public TugasAkhir getTugasAkhir(){
+
+    public TugasAkhir getTugasAkhir() {
         return tugasAkhir;
     }
+    
+  
     
 }
