@@ -31,6 +31,10 @@ public class Revisi_tugas_akhir extends javax.swing.JFrame {
         label_NIM = new javax.swing.JLabel();
         field_NIM = new javax.swing.JTextField();
         revisi = new javax.swing.JButton();
+        label_judulta = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        field_judulTA = new javax.swing.JTextArea();
+        kembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,6 +45,14 @@ public class Revisi_tugas_akhir extends javax.swing.JFrame {
 
         revisi.setText("Revisi");
 
+        label_judulta.setText("Judul TA");
+
+        field_judulTA.setColumns(20);
+        field_judulTA.setRows(5);
+        jScrollPane1.setViewportView(field_judulTA);
+
+        kembali.setText("Kembali");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -48,13 +60,19 @@ public class Revisi_tugas_akhir extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(revisi)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(label_NIM)
-                        .addGap(32, 32, 32)
+                        .addComponent(kembali)
+                        .addGap(29, 29, 29)
+                        .addComponent(revisi))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_NIM)
+                            .addComponent(label_judulta))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(label_judul)
-                            .addComponent(field_NIM, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(field_NIM)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE))))
                 .addContainerGap(81, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -66,9 +84,15 @@ public class Revisi_tugas_akhir extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_NIM)
                     .addComponent(field_NIM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addComponent(revisi)
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_judulta)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(revisi)
+                    .addComponent(kembali))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
@@ -111,8 +135,12 @@ public class Revisi_tugas_akhir extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField field_NIM;
+    private javax.swing.JTextArea field_judulTA;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton kembali;
     private javax.swing.JLabel label_NIM;
     private javax.swing.JLabel label_judul;
+    private javax.swing.JLabel label_judulta;
     private javax.swing.JButton revisi;
     // End of variables declaration//GEN-END:variables
 }
