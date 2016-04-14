@@ -12,7 +12,7 @@ import java.util.*;
  * @author martcelius
  */
 public class Aplikasi {
-   
+
     private ArrayList<Dosen> daftarDosen = new ArrayList<>();
     private ArrayList<Mahasiswa> daftarMahasiswa = new ArrayList<>();
     Scanner s = new Scanner(System.in);
