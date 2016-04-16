@@ -308,9 +308,9 @@ public class Controller implements ActionListener {
             md.addListener(this);
             ck.setVisible(false);
         }
-        if(e.getSource().equals(md.getLihatKelempok())){
+        /*if(e.getSource().equals(md.getLihatKelempok())){
             vkt.
-        }
+        }*/
 
         
     }
