@@ -5,6 +5,12 @@
  */
 package ViewTubes;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author lannyspt
@@ -16,6 +22,61 @@ public class Menu_Dosen extends javax.swing.JFrame {
      */
     public Menu_Dosen() {
         initComponents();
+    }
+
+    public JButton getHapusDosen() {
+        return HapusDosen;
+    }
+
+    public JButton getHapusKelompok() {
+        return HapusKelompok;
+    }
+
+    public JButton getKeluar() {
+        return Keluar;
+    }
+
+    public JButton getLihatDosen() {
+        return LihatDosen;
+    }
+
+    public JButton getLihatKelempok() {
+        return LihatKelompok;
+    }
+
+    public JButton getMasukData() {
+        return MasukData;
+    }
+
+    public JButton getTambahAnggota() {
+        return TambahAnggota;
+    }
+
+    public JButton getTambahKelompok() {
+        return TambahKelompok;
+    }
+
+    public JDialog getjDialog1() {
+        return jDialog1;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JLabel getLabel_judul() {
+        return label_judul;
+    }
+    
+    public void addListener(ActionListener e){
+        HapusDosen.addActionListener(e);
+        HapusKelompok.addActionListener(e);
+        Keluar.addActionListener(e);
+        LihatDosen.addActionListener(e);
+        LihatKelompok.addActionListener(e);
+        MasukData.addActionListener(e);
+        TambahAnggota.addActionListener(e);
+        TambahKelompok.addActionListener(e);
     }
 
     /**
@@ -30,14 +91,14 @@ public class Menu_Dosen extends javax.swing.JFrame {
         jDialog1 = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         label_judul = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        MasukData = new javax.swing.JButton();
+        TambahKelompok = new javax.swing.JButton();
+        LihatDosen = new javax.swing.JButton();
+        LihatKelompok = new javax.swing.JButton();
+        HapusDosen = new javax.swing.JButton();
+        HapusKelompok = new javax.swing.JButton();
+        TambahAnggota = new javax.swing.JButton();
+        Keluar = new javax.swing.JButton();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -58,48 +119,51 @@ public class Menu_Dosen extends javax.swing.JFrame {
         label_judul.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         label_judul.setText("Daftar Menu Dosen");
 
-        jButton1.setText("Masukkan Data Dosen");
+        MasukData.setText("Masukkan Data Dosen");
 
-        jButton5.setText("Tambah Kelompok TA");
+        TambahKelompok.setText("Tambah Kelompok TA");
 
-        jButton2.setText("Lihat Data Dosen");
+        LihatDosen.setText("Lihat Data Dosen");
 
-        jButton6.setText("Lihat Kelompok TA");
+        LihatKelompok.setText("Lihat Kelompok TA");
 
-        jButton3.setText("Hapus Data Dosen");
+        HapusDosen.setText("Hapus Data Dosen");
 
-        jButton7.setText("Hapus Kelompok TA");
+        HapusKelompok.setText("Hapus Kelompok TA");
 
-        jButton8.setText("Tambah Anggota TA");
+        TambahAnggota.setText("Tambah Anggota TA");
 
-        jButton4.setText("Keluar");
+        Keluar.setText("Keluar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addGap(47, 47, 47))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(126, 126, 126)
                 .addComponent(label_judul)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(LihatDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(MasukData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(HapusDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(TambahKelompok, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                    .addComponent(LihatKelompok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(HapusKelompok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(73, 73, 73))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(Keluar)
+                        .addGap(47, 47, 47))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(TambahAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(156, 156, 156))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,20 +172,20 @@ public class Menu_Dosen extends javax.swing.JFrame {
                 .addComponent(label_judul)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton5))
+                    .addComponent(MasukData)
+                    .addComponent(TambahKelompok))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton6))
+                    .addComponent(LihatDosen)
+                    .addComponent(LihatKelompok))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton7))
-                .addGap(27, 27, 27)
-                .addComponent(jButton8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addComponent(jButton4)
+                    .addComponent(HapusDosen)
+                    .addComponent(HapusKelompok))
+                .addGap(30, 30, 30)
+                .addComponent(TambahAnggota)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addComponent(Keluar)
                 .addGap(26, 26, 26))
         );
 
@@ -176,14 +240,14 @@ public class Menu_Dosen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton HapusDosen;
+    private javax.swing.JButton HapusKelompok;
+    private javax.swing.JButton Keluar;
+    private javax.swing.JButton LihatDosen;
+    private javax.swing.JButton LihatKelompok;
+    private javax.swing.JButton MasukData;
+    private javax.swing.JButton TambahAnggota;
+    private javax.swing.JButton TambahKelompok;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel label_judul;

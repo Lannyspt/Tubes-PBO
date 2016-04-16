@@ -4,6 +4,8 @@
   <NonVisualComponents>
     <Component class="javax.swing.JOptionPane" name="jOptionPane1">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="LP">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -94,7 +96,7 @@
                               <Group type="102" attributes="0">
                                   <Component id="label_nohp" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="filed_NoHp" max="32767" attributes="0"/>
+                                  <Component id="field_NoHp" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
@@ -116,7 +118,7 @@
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_nohp" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="filed_NoHp" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="field_NoHp" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -160,7 +162,7 @@
             <Property name="text" type="java.lang.String" value="No Handphone"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="filed_NoHp">
+        <Component class="javax.swing.JTextField" name="field_NoHp">
         </Component>
         <Component class="javax.swing.JLabel" name="label_jeniskelamin">
           <Properties>
@@ -169,11 +171,17 @@
         </Component>
         <Component class="javax.swing.JRadioButton" name="L">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="LP"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="L"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JRadioButton" name="P">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="LP"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="P"/>
           </Properties>
         </Component>

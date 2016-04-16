@@ -62,33 +62,38 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
                   <Component id="label_judul" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jButton2" max="32767" attributes="0"/>
-                          <Component id="jButton1" max="32767" attributes="0"/>
-                      </Group>
-                      <Component id="jButton3" min="-2" pref="152" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="LihatDosen" max="32767" attributes="0"/>
+                      <Component id="MasukData" max="32767" attributes="0"/>
+                      <Component id="HapusDosen" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton8" max="32767" attributes="0"/>
-                      <Component id="jButton5" pref="145" max="32767" attributes="0"/>
-                      <Component id="jButton6" max="32767" attributes="0"/>
-                      <Component id="jButton7" max="32767" attributes="0"/>
+                      <Component id="TambahKelompok" pref="145" max="32767" attributes="0"/>
+                      <Component id="LihatKelompok" max="32767" attributes="0"/>
+                      <Component id="HapusKelompok" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="Keluar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="TambahAnggota" min="-2" pref="148" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -99,23 +104,23 @@
                   <Component id="label_judul" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="MasukData" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TambahKelompok" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LihatDosen" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LihatKelompok" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="HapusDosen" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="HapusKelompok" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="64" max="32767" attributes="0"/>
-                  <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="TambahAnggota" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="61" max="32767" attributes="0"/>
+                  <Component id="Keluar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -130,42 +135,42 @@
             <Property name="text" type="java.lang.String" value="Daftar Menu Dosen"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="MasukData">
           <Properties>
             <Property name="text" type="java.lang.String" value="Masukkan Data Dosen"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton5">
+        <Component class="javax.swing.JButton" name="TambahKelompok">
           <Properties>
             <Property name="text" type="java.lang.String" value="Tambah Kelompok TA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="LihatDosen">
           <Properties>
             <Property name="text" type="java.lang.String" value="Lihat Data Dosen"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton6">
+        <Component class="javax.swing.JButton" name="LihatKelompok">
           <Properties>
             <Property name="text" type="java.lang.String" value="Lihat Kelompok TA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="HapusDosen">
           <Properties>
             <Property name="text" type="java.lang.String" value="Hapus Data Dosen"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton7">
+        <Component class="javax.swing.JButton" name="HapusKelompok">
           <Properties>
             <Property name="text" type="java.lang.String" value="Hapus Kelompok TA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton8">
+        <Component class="javax.swing.JButton" name="TambahAnggota">
           <Properties>
             <Property name="text" type="java.lang.String" value="Tambah Anggota TA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton4">
+        <Component class="javax.swing.JButton" name="Keluar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Keluar"/>
           </Properties>

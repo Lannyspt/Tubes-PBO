@@ -5,6 +5,16 @@
  */
 package ViewTubes;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.table.DefaultTableModel;
+import tubespbo.Aplikasi;
+import tubespbo.Mahasiswa;
+
 /**
  *
  * @author lannyspt
@@ -14,8 +24,56 @@ public class View_mahasiswa extends javax.swing.JFrame {
     /**
      * Creates new form View_mahasiswa
      */
+    DefaultTableModel tableModel;
+    Aplikasi model;
+    
     public View_mahasiswa() {
         initComponents();
+        model=new Aplikasi();
+        tampildata(model);
+    }
+    
+    public void tampildata(Aplikasi m){
+        try{
+        String[] kolom={"No","Nama","NoHp","NIM","Jenis Kelamin"};
+        String[][] objData=new String [m.getAll2().size()][6];
+        int nomer =0;
+        
+        for (Mahasiswa n:m.getAll2()){
+            String ar_Mahasiswa[]=new String[]{
+                String.valueOf(nomer+1),n.getNama(),n.getNoHandphone(),n.getIdMahasiswa(),n.getJenisKelamin()};
+            objData[nomer]=ar_Mahasiswa;
+            nomer++;
+            
+        }tableModel=new DefaultTableModel(objData,kolom);
+        table.setModel(tableModel);
+        }catch(Exception e){
+            e.printStackTrace();
+            
+        }
+        
+        }
+    
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public JTable getjTable1() {
+        return table;
+    }
+
+    public JButton getKembali() {
+        return kembali;
+    }
+
+    public JLabel getLabel_judul() {
+        return label_judul;
+    }
+
+    
+    public void addListener(ActionListener e){
+       kembali.addActionListener(e);
     }
 
     /**
@@ -28,27 +86,58 @@ public class View_mahasiswa extends javax.swing.JFrame {
     private void initComponents() {
 
         label_judul = new javax.swing.JLabel();
+        kembali = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         label_judul.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         label_judul.setText("Lihat Data Mahasiswa");
 
+        kembali.setText("Kembali");
+
+        table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(table);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addComponent(label_judul)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(kembali))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addComponent(label_judul)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 29, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(label_judul)
-                .addContainerGap(267, Short.MAX_VALUE))
+                .addGap(80, 80, 80)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
+                .addComponent(kembali)
+                .addContainerGap())
         );
 
         pack();
@@ -90,6 +179,11 @@ public class View_mahasiswa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton kembali;
     private javax.swing.JLabel label_judul;
+    private javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
+
+    
 }

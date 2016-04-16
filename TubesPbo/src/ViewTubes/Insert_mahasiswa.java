@@ -5,6 +5,15 @@
  */
 package ViewTubes;
 
+import java.awt.event.ActionListener;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author lannyspt
@@ -18,6 +27,94 @@ public class Insert_mahasiswa extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getKembali() {
+        return Kembali;
+    }
+
+    public JRadioButton getL() {
+        return L;
+    }
+
+    public JRadioButton getP() {
+        return P;
+    }
+
+    public JButton getTambah() {
+        return Tambah;
+    }
+
+    public JTextField getField_NIM() {
+        return field_NIM;
+    }
+
+    public JTextField getField_nama() {
+        return field_nama;
+    }
+
+    public JTextField getFiled_NoHp() {
+        return field_NoHp;
+    }
+
+    public JOptionPane getjOptionPane1() {
+        return jOptionPane1;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JLabel getLabel_NIM() {
+        return label_NIM;
+    }
+
+    public JLabel getLabel_jeniskelamin() {
+        return label_jeniskelamin;
+    }
+
+    public JLabel getLabel_judul() {
+        return label_judul;
+    }
+
+    public JLabel getLabel_nama() {
+        return label_nama;
+    }
+
+    public JLabel getLabel_nohp() {
+        return label_nohp;
+    }
+    
+    public void addListener(ActionListener e){
+        Kembali.addActionListener(e);
+        Tambah.addActionListener(e);
+        
+    }
+    public String RB(){
+        if(L.isSelected()){
+            return "p";
+        } else{
+            return "L";
+        }
+    }
+
+    public ButtonGroup getLP() {
+        return LP;
+    }
+    public String getNamaMahasiswa(){
+        return field_nama.getText();
+    }
+    public String getNoHp(){
+        return field_NoHp.getText();
+    }
+    public String getIdMahasiswa(){
+        return field_NIM.getText();
+    }
+    
+    public void reset(){
+        field_nama.setText("");
+        field_NoHp.setText("");
+        field_NIM.setText("");
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,12 +125,13 @@ public class Insert_mahasiswa extends javax.swing.JFrame {
     private void initComponents() {
 
         jOptionPane1 = new javax.swing.JOptionPane();
+        LP = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         label_judul = new javax.swing.JLabel();
         label_nama = new javax.swing.JLabel();
         field_nama = new javax.swing.JTextField();
         label_nohp = new javax.swing.JLabel();
-        filed_NoHp = new javax.swing.JTextField();
+        field_NoHp = new javax.swing.JTextField();
         label_jeniskelamin = new javax.swing.JLabel();
         L = new javax.swing.JRadioButton();
         P = new javax.swing.JRadioButton();
@@ -56,8 +154,10 @@ public class Insert_mahasiswa extends javax.swing.JFrame {
 
         label_jeniskelamin.setText("Jenis Kelamin");
 
+        LP.add(L);
         L.setText("L");
 
+        LP.add(P);
         P.setText("P");
 
         label_NIM.setText("ID Mahasiswa");
@@ -105,7 +205,7 @@ public class Insert_mahasiswa extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(label_nohp)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(filed_NoHp)))
+                                .addComponent(field_NoHp)))
                         .addGap(92, 92, 92))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -120,7 +220,7 @@ public class Insert_mahasiswa extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_nohp)
-                    .addComponent(filed_NoHp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(field_NoHp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_jeniskelamin)
@@ -192,11 +292,12 @@ public class Insert_mahasiswa extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Kembali;
     private javax.swing.JRadioButton L;
+    private javax.swing.ButtonGroup LP;
     private javax.swing.JRadioButton P;
     private javax.swing.JButton Tambah;
     private javax.swing.JTextField field_NIM;
+    private javax.swing.JTextField field_NoHp;
     private javax.swing.JTextField field_nama;
-    private javax.swing.JTextField filed_NoHp;
     private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel label_NIM;

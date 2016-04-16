@@ -5,6 +5,11 @@
  */
 package ViewTubes;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author lannyspt
@@ -16,6 +21,56 @@ public class Menu_Mahasiswa extends javax.swing.JFrame {
      */
     public Menu_Mahasiswa() {
         initComponents();
+    }
+
+    public JButton getBuatTugas() {
+        return BuatTugas;
+    }
+
+    public JButton getDeleteData() {
+        return DeleteData;
+    }
+
+    public JButton getKeluar() {
+        return Keluar;
+    }
+
+    public JButton getLihatData() {
+        return LihatData;
+    }
+
+    public JButton getLihatTugas() {
+        return LihatTugas;
+    }
+
+    public JButton getMasukkanData() {
+        return MasukkanData;
+    }
+
+    public JButton getRevisiTA() {
+        return RevisiTA;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JLabel getLabel_judul() {
+        return label_judul;
+    }
+
+    public JLabel getLabel_judul1() {
+        return label_judul1;
+    }
+
+    public void addListener(ActionListener e) {
+        BuatTugas.addActionListener(e);
+        DeleteData.addActionListener(e);
+        Keluar.addActionListener(e);
+        LihatData.addActionListener(e);
+        LihatTugas.addActionListener(e);
+        MasukkanData.addActionListener(e);
+        RevisiTA.addActionListener(e);
     }
 
     /**
@@ -30,13 +85,13 @@ public class Menu_Mahasiswa extends javax.swing.JFrame {
         label_judul = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         label_judul1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        MasukkanData = new javax.swing.JButton();
+        BuatTugas = new javax.swing.JButton();
+        LihatData = new javax.swing.JButton();
+        LihatTugas = new javax.swing.JButton();
+        DeleteData = new javax.swing.JButton();
+        RevisiTA = new javax.swing.JButton();
+        Keluar = new javax.swing.JButton();
 
         label_judul.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         label_judul.setText("Daftar Menu Dosen");
@@ -50,19 +105,19 @@ public class Menu_Mahasiswa extends javax.swing.JFrame {
         label_judul1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         label_judul1.setText("Daftar Menu Mahasiswa");
 
-        jButton1.setText("Masukkan Data Mahasiswa");
+        MasukkanData.setText("Masukkan Data Mahasiswa");
 
-        jButton4.setText("Buat Tugas Akhir");
+        BuatTugas.setText("Buat Tugas Akhir");
 
-        jButton2.setText("Lihat Data Mahasiswa");
+        LihatData.setText("Lihat Data Mahasiswa");
 
-        jButton5.setText("Lihat Tugas Akhir");
+        LihatTugas.setText("Lihat Tugas Akhir");
 
-        jButton3.setText("Delete Data Mahasiswa");
+        DeleteData.setText("Delete Data Mahasiswa");
 
-        jButton6.setText("Revisi Tugas Akhir");
+        RevisiTA.setText("Revisi Tugas Akhir");
 
-        jButton7.setText("Exit");
+        Keluar.setText("Keluar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -73,19 +128,19 @@ public class Menu_Mahasiswa extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton7)
+                            .addComponent(Keluar)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton1))
+                                    .addComponent(DeleteData, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LihatData, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(MasukkanData))
                                 .addGap(43, 43, 43)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(LihatTugas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(RevisiTA, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                    .addComponent(BuatTugas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(121, 121, 121)
                         .addComponent(label_judul1)))
@@ -98,18 +153,18 @@ public class Menu_Mahasiswa extends javax.swing.JFrame {
                 .addComponent(label_judul1)
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton4))
+                    .addComponent(MasukkanData)
+                    .addComponent(BuatTugas))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton5))
+                    .addComponent(LihatData)
+                    .addComponent(LihatTugas))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton6))
+                    .addComponent(DeleteData)
+                    .addComponent(RevisiTA))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(jButton7)
+                .addComponent(Keluar)
                 .addGap(28, 28, 28))
         );
 
@@ -164,13 +219,13 @@ public class Menu_Mahasiswa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton BuatTugas;
+    private javax.swing.JButton DeleteData;
+    private javax.swing.JButton Keluar;
+    private javax.swing.JButton LihatData;
+    private javax.swing.JButton LihatTugas;
+    private javax.swing.JButton MasukkanData;
+    private javax.swing.JButton RevisiTA;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel label_judul;
     private javax.swing.JLabel label_judul1;

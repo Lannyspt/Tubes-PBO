@@ -63,7 +63,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="label_judul" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="filed_NIM" pref="239" max="32767" attributes="0"/>
+                                  <Component id="field_NIM" pref="239" max="32767" attributes="0"/>
                                   <Component id="field_judul" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -81,7 +81,7 @@
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_NIM" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="filed_NIM" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="field_NIM" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -117,7 +117,7 @@
             <Property name="text" type="java.lang.String" value="ID Mahasiswa"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="filed_NIM">
+        <Component class="javax.swing.JTextField" name="field_NIM">
         </Component>
         <Component class="javax.swing.JLabel" name="label_judulTA">
           <Properties>
@@ -130,6 +130,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Tambahkan"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tambahActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="kembali">
           <Properties>

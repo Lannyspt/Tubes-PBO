@@ -5,6 +5,18 @@
  */
 package ViewTubes;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+import tubespbo.Aplikasi;
+import tubespbo.KelompokTA;
+import tubespbo.Mahasiswa;
+
 /**
  *
  * @author lannyspt
@@ -14,9 +26,92 @@ public class View_kelompok_ta extends javax.swing.JFrame {
     /**
      * Creates new form View_kelompok_ta
      */
+    DefaultTableModel tableModel;
+    KelompokTA klmpk;
+    
     public View_kelompok_ta() {
         initComponents();
+        klmpk=new KelompokTA();
+        tampildata3(klmpk);
     }
+    
+    public void tampildata3(KelompokTA kt){
+        try{
+        String[] kolom={"No","Nama"};
+        String[][] objData=new String [kt.getAnggota2().size()][3];
+        int nomer =0;
+        
+        for (Mahasiswa n:kt.getAnggota2()){
+            String ar_Anggota[]=new String[]{
+                String.valueOf(nomer+1),n.getNama()};
+            objData[nomer]=ar_Anggota;
+            nomer++;
+            
+        }tableModel=new DefaultTableModel(objData,kolom);
+        tableAnggota.setModel(tableModel);
+        }catch(Exception e){
+            e.printStackTrace();
+            
+        }
+        
+        }
+
+    public DefaultTableModel getTableModel() {
+        return tableModel;
+    }
+
+    public KelompokTA getKlmpk() {
+        return klmpk;
+    }
+
+    public JButton getCari() {
+        return cari;
+    }
+
+    public JTextField getField_ID() {
+        return field_ID;
+    }
+
+    public JTextField getField_topik() {
+        return field_topik;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public JLabel getLabel_ID() {
+        return label_ID;
+    }
+
+    public JLabel getLabel_judul() {
+        return label_judul;
+    }
+
+    public JLabel getLabel_topik() {
+        return label_topik;
+    }
+
+    public JTable getTableAnggota() {
+        return tableAnggota;
+    }
+
+    public JButton getKembali() {
+        return kembali;
+    }
+    
+    public void addListener(ActionListener e){
+        cari.addActionListener(e);
+        kembali.addActionListener(e);
+    }
+    
+    /*public String getID(){
+        
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,55 +122,16 @@ public class View_kelompok_ta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFrame1 = new javax.swing.JFrame();
-        jLabel4 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        field_isi = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         label_judul = new javax.swing.JLabel();
         label_ID = new javax.swing.JLabel();
         field_ID = new javax.swing.JTextField();
         label_topik = new javax.swing.JLabel();
         field_topik = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("Daftar Kelompok TA");
-
-        field_isi.setColumns(20);
-        field_isi.setRows(5);
-        jScrollPane1.setViewportView(field_isi);
-
-        jButton2.setText("kembali");
-
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame1Layout.createSequentialGroup()
-                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2)
-                    .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jFrame1Layout.createSequentialGroup()
-                            .addGap(115, 115, 115)
-                            .addComponent(jLabel4))
-                        .addGroup(jFrame1Layout.createSequentialGroup()
-                            .addGap(70, 70, 70)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(81, Short.MAX_VALUE))
-        );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
-                .addGap(33, 33, 33)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jButton2)
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
+        cari = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableAnggota = new javax.swing.JTable();
+        kembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Daftar Kelompok TA");
@@ -89,7 +145,22 @@ public class View_kelompok_ta extends javax.swing.JFrame {
 
         label_topik.setText("Topik TA");
 
-        jButton1.setText("Cari");
+        cari.setText("Cari");
+
+        tableAnggota.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(tableAnggota);
+
+        kembali.setText("Kembali");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -102,14 +173,22 @@ public class View_kelompok_ta extends javax.swing.JFrame {
                     .addComponent(label_topik))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cari, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(field_topik, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(field_ID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(99, Short.MAX_VALUE)
+                .addContainerGap(105, Short.MAX_VALUE)
                 .addComponent(label_judul)
                 .addGap(96, 96, 96))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(kembali)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,9 +206,13 @@ public class View_kelompok_ta extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(field_topik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(26, 26, 26)
-                .addComponent(jButton1)
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cari)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(kembali)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -138,7 +221,7 @@ public class View_kelompok_ta extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,17 +268,15 @@ public class View_kelompok_ta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cari;
     private javax.swing.JTextField field_ID;
-    private javax.swing.JTextArea field_isi;
     private javax.swing.JTextField field_topik;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JFrame jFrame1;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton kembali;
     private javax.swing.JLabel label_ID;
     private javax.swing.JLabel label_judul;
     private javax.swing.JLabel label_topik;
+    private javax.swing.JTable tableAnggota;
     // End of variables declaration//GEN-END:variables
 }

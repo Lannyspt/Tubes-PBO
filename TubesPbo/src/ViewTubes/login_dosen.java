@@ -5,6 +5,12 @@
  */
 package ViewTubes;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author lannyspt
@@ -17,6 +23,56 @@ public class login_dosen extends javax.swing.JFrame {
     public login_dosen() {
         initComponents();
     }
+
+    public JTextField getField_ID() {
+        return field_ID;
+    }
+
+    public JTextField getField_nama() {
+        return field_nama;
+    }
+
+    public JButton getMasuk() {
+        return Masuk;
+    }
+
+    public JButton getKembali() {
+        return Kembali;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JLabel getLabel_ID() {
+        return label_ID;
+    }
+
+    public JLabel getLabel_judul() {
+        return label_judul;
+    }
+
+    public JLabel getLabel_nama() {
+        return label_nama;
+    }
+    public void setNama(String s){
+        field_nama.setText(s);
+    }
+    public String getNama(){
+        return field_nama.getText();
+    }
+    
+    public void setIdDosen(String s){
+        field_ID.setText(s);
+    }
+    public String getIdDosen(){
+        return field_ID.getText();
+    }
+    public void addListener(ActionListener e){
+        Kembali.addActionListener(e);
+        Masuk.addActionListener(e);
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,8 +89,8 @@ public class login_dosen extends javax.swing.JFrame {
         field_nama = new javax.swing.JTextField();
         label_ID = new javax.swing.JLabel();
         field_ID = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Kembali = new javax.swing.JButton();
+        Masuk = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login Dosen");
@@ -54,9 +110,9 @@ public class login_dosen extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Kembali");
+        Kembali.setText("Kembali");
 
-        jButton1.setText("Masuk");
+        Masuk.setText("Masuk");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -66,9 +122,9 @@ public class login_dosen extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(Kembali)
                         .addGap(23, 23, 23)
-                        .addComponent(jButton1))
+                        .addComponent(Masuk))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,8 +160,8 @@ public class login_dosen extends javax.swing.JFrame {
                         .addComponent(field_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
+                    .addComponent(Kembali)
+                    .addComponent(Masuk))
                 .addContainerGap(87, Short.MAX_VALUE))
         );
 
@@ -131,43 +187,13 @@ public class login_dosen extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(login_dosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(login_dosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(login_dosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(login_dosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new login_dosen().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Kembali;
+    private javax.swing.JButton Masuk;
     private javax.swing.JTextField field_ID;
     private javax.swing.JTextField field_nama;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel label_ID;
     private javax.swing.JLabel label_judul;

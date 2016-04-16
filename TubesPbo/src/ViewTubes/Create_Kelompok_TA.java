@@ -5,6 +5,14 @@
  */
 package ViewTubes;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author lannyspt
@@ -18,6 +26,85 @@ public class Create_Kelompok_TA extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JTextField getField_topik() {
+        return Field_topik;
+    }
+
+    public JTextField getField_ID() {
+        return Field_ID;
+    }
+
+    public JTextField getField_namaKelompok() {
+        return field_namaKelompok;
+    }
+
+    public JOptionPane getjOptionPane1() {
+        return jOptionPane1;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JButton getKembali() {
+        return kembali;
+    }
+
+    public JLabel getLabel_ID() {
+        return label_ID;
+    }
+
+    public JLabel getLabel_judul() {
+        return label_judul;
+    }
+
+    public JLabel getLabel_nama() {
+        return label_nama;
+    }
+
+    public JLabel getLabel_topik() {
+        return label_topik;
+    }
+
+    public JLabel getLabel_urutan() {
+        return label_urutan;
+    }
+
+    public JButton getTambah() {
+        return tambah;
+    }
+    
+    public String getIdDosen(){
+        return Field_ID.getText();
+    }
+    
+    public String getTopik(){
+        return Field_topik.getText();
+    }
+
+    public JTextField getUrutan() {
+        return urutan;
+    }
+    
+    public int getUrutan2(){
+        return Integer.parseInt(urutan.getText());
+    }
+    
+    public String getNamakelompok(){
+        return field_namaKelompok.getText();
+    }
+    
+    public void addListener(ActionListener e){
+       tambah.addActionListener(e);
+       kembali.addActionListener(e);
+    }
+    public void reset(){
+        Field_ID.setText("");
+        Field_topik.setText("");
+        field_namaKelompok.setText("");
+        urutan.setText("");
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,13 +120,13 @@ public class Create_Kelompok_TA extends javax.swing.JFrame {
         label_ID = new javax.swing.JLabel();
         Field_ID = new javax.swing.JTextField();
         label_topik = new javax.swing.JLabel();
-        Fied_topik = new javax.swing.JTextField();
+        Field_topik = new javax.swing.JTextField();
         label_nama = new javax.swing.JLabel();
-        field_nama = new javax.swing.JTextField();
+        field_namaKelompok = new javax.swing.JTextField();
         label_urutan = new javax.swing.JLabel();
-        urutan = new javax.swing.JComboBox<>();
         kembali = new javax.swing.JButton();
         tambah = new javax.swing.JButton();
+        urutan = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,8 +143,6 @@ public class Create_Kelompok_TA extends javax.swing.JFrame {
 
         label_urutan.setText("Urutan Kelompok");
 
-        urutan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         kembali.setText("Kembali");
 
         tambah.setText("Tambahkan");
@@ -67,38 +152,31 @@ public class Create_Kelompok_TA extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tambah)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(label_ID)
+                                    .addComponent(label_topik)
                                     .addComponent(label_nama)
-                                    .addGap(37, 37, 37)
-                                    .addComponent(field_nama, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(label_ID)
-                                        .addComponent(label_topik))
-                                    .addGap(68, 68, 68)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(Field_ID, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
-                                        .addComponent(Fied_topik)))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(label_urutan))
+                                .addGap(31, 31, 31))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(kembali, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Field_ID)
+                                .addComponent(Field_topik)
+                                .addComponent(field_namaKelompok, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(urutan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tambah, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(label_urutan)
-                        .addGap(26, 26, 26)
-                        .addComponent(urutan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(kembali)
-                .addGap(156, 156, 156))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(126, 126, 126)
-                .addComponent(label_judul)
-                .addContainerGap(142, Short.MAX_VALUE))
+                        .addGap(126, 126, 126)
+                        .addComponent(label_judul)))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,26 +184,27 @@ public class Create_Kelompok_TA extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(label_judul)
                 .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(label_ID)
+                            .addComponent(Field_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Field_topik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label_topik))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(field_namaKelompok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label_nama))
+                        .addGap(18, 18, 18)
+                        .addComponent(urutan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label_urutan))
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_ID)
-                    .addComponent(Field_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_topik)
-                    .addComponent(Fied_topik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_nama)
-                    .addComponent(field_nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_urutan)
-                    .addComponent(urutan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(kembali)
-                    .addComponent(tambah))
-                .addContainerGap(30, Short.MAX_VALUE))
+                    .addComponent(tambah)
+                    .addComponent(kembali))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -179,9 +258,9 @@ public class Create_Kelompok_TA extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Fied_topik;
     private javax.swing.JTextField Field_ID;
-    private javax.swing.JTextField field_nama;
+    private javax.swing.JTextField Field_topik;
+    private javax.swing.JTextField field_namaKelompok;
     private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton kembali;
@@ -191,6 +270,6 @@ public class Create_Kelompok_TA extends javax.swing.JFrame {
     private javax.swing.JLabel label_topik;
     private javax.swing.JLabel label_urutan;
     private javax.swing.JButton tambah;
-    private javax.swing.JComboBox<String> urutan;
+    private javax.swing.JTextField urutan;
     // End of variables declaration//GEN-END:variables
 }

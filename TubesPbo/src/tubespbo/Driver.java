@@ -5,6 +5,8 @@
  */
 package tubespbo;
 
+import Controller.Controller;
+
 /**
  *
  * @author lannyspt
@@ -14,7 +16,9 @@ public class Driver {
         
     
     Aplikasi A= new Aplikasi();
-    A.mainMenu();
+    //A.mainMenu();
+    new Controller(A);
+    
             
     }
 }

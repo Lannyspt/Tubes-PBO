@@ -5,6 +5,15 @@
  */
 package ViewTubes;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import tubespbo.Aplikasi;
+import tubespbo.Dosen;
+
 /**
  *
  * @author lannyspt
@@ -14,8 +23,64 @@ public class View_dosen extends javax.swing.JFrame {
     /**
      * Creates new form View_dosen
      */
+    Aplikasi model;
+    DefaultTableModel tableModel;
+
     public View_dosen() {
         initComponents();
+        model=new Aplikasi();
+        tampildata2(model);
+    }
+
+    public void tampildata2(Aplikasi m) {
+        try {
+            String[] kolom = {"No", "Nama", "NoHp", "NIP", "Jenis Kelamin"};
+            String[][] objData = new String[m.getAll().size()][6];
+            int nomer = 0;
+
+            for (Dosen n : m.getAll()) {
+                String ar_Dosen[] = new String[]{
+                    String.valueOf(nomer + 1), n.getNama(), n.getNoHandphone(), n.getIdDosen(), n.getJenisKelamin()};
+                objData[nomer] = ar_Dosen;
+                nomer++;
+
+            }
+            tableModel = new DefaultTableModel(objData, kolom);
+            Lihatdosen.setModel(tableModel);
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+
+    }
+
+    public JButton getKeluar() {
+        return Keluar;
+    }
+
+    public JTable getLihatdosen() {
+        return Lihatdosen;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public JLabel getLabel_judul() {
+        return label_judul;
+    }
+
+    public void addListener(ActionListener e) {
+        Keluar.addActionListener(e);
+
     }
 
     /**
@@ -31,7 +96,8 @@ public class View_dosen extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         label_judul = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        Lihatdosen = new javax.swing.JTable();
+        Keluar = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -51,29 +117,51 @@ public class View_dosen extends javax.swing.JFrame {
         label_judul.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         label_judul.setText("Lihat Daftar Dosen");
 
-        jScrollPane2.setViewportView(jTable2);
+        Lihatdosen.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(Lihatdosen);
+
+        Keluar.setText("Keluar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(label_judul)
-                .addGap(120, 120, 120))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 16, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(label_judul)
+                                .addGap(120, 120, 120))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Keluar)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(label_judul)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(Keluar)
+                .addGap(37, 37, 37))
         );
 
         pack();
@@ -115,10 +203,11 @@ public class View_dosen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Keluar;
+    private javax.swing.JTable Lihatdosen;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JLabel label_judul;
     // End of variables declaration//GEN-END:variables
 }

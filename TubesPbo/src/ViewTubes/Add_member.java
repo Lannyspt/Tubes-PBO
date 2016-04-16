@@ -5,6 +5,13 @@
  */
 package ViewTubes;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author lannyspt
@@ -16,8 +23,66 @@ public class Add_member extends javax.swing.JFrame {
      */
     public Add_member() {
         initComponents();
+    
+    }
+    public void addListener(ActionListener e){
+        Kembali.addActionListener(e);
+        Tambahkan.addActionListener(e);
     }
 
+    public JLabel getIdDosen() {
+        return IdDosen;
+    }
+
+    public JLabel getIdMahasiswa() {
+        return IdMahasiswa;
+    }
+
+    public JButton getKembali() {
+        return Kembali;
+    }
+
+    public JButton getTambahkan() {
+        return Tambahkan;
+    }
+
+    public JLabel getTopikTA() {
+        return TopikTA;
+    }
+
+    public JTextField getField_ID() {
+        return field_ID;
+    }
+
+    public JTextField getField_NIM() {
+        return field_NIM;
+    }
+
+    public JTextField getField_topikta() {
+        return field_topikta;
+    }
+
+    public JOptionPane getjOptionPane1() {
+        return jOptionPane1;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public JLabel getLabel_judul() {
+        return label_judul;
+    }
+    
+
+   
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,14 +96,14 @@ public class Add_member extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         label_judul = new javax.swing.JLabel();
-        label_topikta = new javax.swing.JLabel();
-        label_ID = new javax.swing.JLabel();
-        label_NIM = new javax.swing.JLabel();
+        TopikTA = new javax.swing.JLabel();
+        IdDosen = new javax.swing.JLabel();
+        IdMahasiswa = new javax.swing.JLabel();
         field_topikta = new javax.swing.JTextField();
         field_ID = new javax.swing.JTextField();
         field_NIM = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Tambahkan = new javax.swing.JButton();
+        Kembali = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -53,22 +118,21 @@ public class Add_member extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tambah Anggota Kelompok TA");
-        setPreferredSize(new java.awt.Dimension(400, 300));
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
 
         label_judul.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         label_judul.setText("Tambah Anggota Kelompok TA");
 
-        label_topikta.setText("Topik TA");
+        TopikTA.setText("Topik TA");
 
-        label_ID.setText("ID Dosen");
+        IdDosen.setText("ID Dosen");
 
-        label_NIM.setText("ID Mahasiswa");
+        IdMahasiswa.setText("ID Mahasiswa");
 
-        jButton1.setText("Tambahkan");
+        Tambahkan.setText("Tambahkan");
 
-        jButton2.setText("Kembali");
+        Kembali.setText("Kembali");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -83,14 +147,14 @@ public class Add_member extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jButton2)
+                                .addComponent(Kembali)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton1))
+                                .addComponent(Tambahkan))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(label_topikta)
-                                    .addComponent(label_ID)
-                                    .addComponent(label_NIM))
+                                    .addComponent(TopikTA)
+                                    .addComponent(IdDosen)
+                                    .addComponent(IdMahasiswa))
                                 .addGap(28, 28, 28)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(field_topikta)
@@ -105,20 +169,20 @@ public class Add_member extends javax.swing.JFrame {
                 .addComponent(label_judul)
                 .addGap(29, 29, 29)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_topikta)
+                    .addComponent(TopikTA)
                     .addComponent(field_topikta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_ID)
+                    .addComponent(IdDosen)
                     .addComponent(field_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_NIM)
+                    .addComponent(IdMahasiswa)
                     .addComponent(field_NIM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(57, 57, 57)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(Tambahkan)
+                    .addComponent(Kembali))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
@@ -173,17 +237,17 @@ public class Add_member extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel IdDosen;
+    private javax.swing.JLabel IdMahasiswa;
+    private javax.swing.JButton Kembali;
+    private javax.swing.JButton Tambahkan;
+    private javax.swing.JLabel TopikTA;
     private javax.swing.JTextField field_ID;
     private javax.swing.JTextField field_NIM;
     private javax.swing.JTextField field_topikta;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JLabel label_ID;
-    private javax.swing.JLabel label_NIM;
     private javax.swing.JLabel label_judul;
-    private javax.swing.JLabel label_topikta;
     // End of variables declaration//GEN-END:variables
 }

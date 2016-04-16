@@ -13,10 +13,29 @@ import java.util.*;
  */
 public class Aplikasi {
 
-    private ArrayList<Dosen> daftarDosen = new ArrayList<>();
-    private ArrayList<Mahasiswa> daftarMahasiswa = new ArrayList<>();
+    private ArrayList<Dosen> daftarDosen;
+    private ArrayList<Mahasiswa> daftarMahasiswa;
     Scanner s = new Scanner(System.in);
 
+    public Aplikasi() {
+        daftarDosen =new  ArrayList<>();
+        daftarMahasiswa = new ArrayList<>();
+    }
+    
+    
+
+     public ArrayList<Dosen> getAll()
+    {
+        return daftarDosen;
+    }
+      public ArrayList<Mahasiswa> getAll2()
+    {
+        return daftarMahasiswa;
+    }
+
+    
+      
+      
     public void addDosen(String nama, String noHandphone, String jenisKelamin, String idDosen) {
         Dosen d = new Dosen(nama, noHandphone, jenisKelamin, idDosen);
         daftarDosen.add(d);
@@ -28,7 +47,7 @@ public class Aplikasi {
     }
 
     public Mahasiswa getMahasiswa(String idMahasiswa) {
-        for (int i = 0; i <= daftarMahasiswa.size(); i++) {
+        for (int i = 0; i < daftarMahasiswa.size(); i++) {
             if (daftarMahasiswa.get(i).getIdMahasiswa().equals(idMahasiswa)) {
                 return daftarMahasiswa.get(i);
             }

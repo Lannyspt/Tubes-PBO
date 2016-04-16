@@ -25,6 +25,9 @@ public class KelompokTA {
         this.namaKelompok = namaKelompok;
         this.urutan=urutan;
     }
+    public KelompokTA(){
+        
+    }
 
     public String getTopik() {
         return topik;

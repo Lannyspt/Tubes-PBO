@@ -5,6 +5,13 @@
  */
 package ViewTubes;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author lannyspt
@@ -17,6 +24,52 @@ public class login_mahasiswa extends javax.swing.JFrame {
     public login_mahasiswa() {
         initComponents();
     }
+
+    public JButton getMasuk() {
+        return Masuk;
+    }
+
+    public JPasswordField getField_NIM() {
+        return field_NIM;
+    }
+
+    public JTextField getField_nama() {
+        return field_nama;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JButton getKembali() {
+        return kembali;
+    }
+
+    public JLabel getLabel_NIM() {
+        return label_NIM;
+    }
+
+    public JLabel getLabel_judul() {
+        return label_judul;
+    }
+
+    public JLabel getLabel_nama() {
+        return label_nama;
+    }
+    
+   
+    public String getNama(){
+        return field_nama.getText();
+    }
+    
+    public String getIdMahasiswa(){
+        return field_NIM.getText();
+    }
+    
+     public void addListener(ActionListener e){
+         kembali.addActionListener(e);
+         Masuk.addActionListener(e);
+     }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -127,37 +180,7 @@ public class login_mahasiswa extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(login_mahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(login_mahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(login_mahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(login_mahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new login_mahasiswa().setVisible(true);
-            }
-        });
-    }
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Masuk;

@@ -5,6 +5,16 @@
  */
 package ViewTubes;
 
+import java.awt.event.ActionListener;
+import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JScrollBar;
+import javax.swing.JTextField;
+
 /**
  *
  * @author lannyspt
@@ -18,6 +28,97 @@ public class insert_dosen extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JRadioButton getL() {
+        return L;
+    }
+
+    public JRadioButton getP() {
+        return P;
+    }
+
+    public JButton getTambah() {
+        return Tambah;
+    }
+
+    public JTextField getField_ID() {
+        return field_ID;
+    }
+
+    public JTextField getField_NoHp() {
+        return field_NoHp;
+    }
+
+    public JTextField getField_nama() {
+        return field_nama;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JScrollBar getjScrollBar1() {
+        return jScrollBar1;
+    }
+
+    public JButton getKembali() {
+        return kembali;
+    }
+
+    public JLabel getLabel_ID() {
+        return label_ID;
+    }
+
+    public JLabel getLabel_jeniskelamin() {
+        return label_jeniskelamin;
+    }
+
+    public JLabel getLabel_judul() {
+        return label_judul;
+    }
+
+    public JLabel getLabel_nama() {
+        return label_nama;
+    }
+
+    public JLabel getLabel_nohp() {
+        return label_nohp;
+    }
+
+    public ButtonGroup getLP() {
+        return LP;
+    }
+    public String RB(){
+        if(L.isSelected()){
+            return "p";
+        } else{
+            return "L";
+        }
+    }
+    
+    public String getIdDosen(){
+        return field_ID.getText();
+    }
+    
+    public String getNamaDosen(){
+        return field_nama.getText();
+    }
+    public String getNoHpDosen(){
+        return field_NoHp.getText();
+    }
+    
+    public void addListener(ActionListener e){
+       Tambah.addActionListener(e);
+       kembali.addActionListener(e);
+    }
+    public void reset(){
+        field_ID.setText("");
+        field_nama.setText("");
+        field_NoHp.setText("");
+        
+    }
+   
+
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,6 +129,7 @@ public class insert_dosen extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollBar1 = new javax.swing.JScrollBar();
+        LP = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         label_judul = new javax.swing.JLabel();
         label_ID = new javax.swing.JLabel();
@@ -59,8 +161,10 @@ public class insert_dosen extends javax.swing.JFrame {
 
         label_jeniskelamin.setText("Jenis Kelamin");
 
+        LP.add(L);
         L.setText("L");
 
+        LP.add(P);
         P.setText("P");
 
         kembali.setText("kembali");
@@ -199,6 +303,7 @@ public class insert_dosen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton L;
+    private javax.swing.ButtonGroup LP;
     private javax.swing.JRadioButton P;
     private javax.swing.JButton Tambah;
     private javax.swing.JTextField field_ID;

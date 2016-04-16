@@ -5,6 +5,12 @@
  */
 package ViewTubes;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author lannyspt
@@ -18,6 +24,54 @@ public class Create_tugas_akhir extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JTextField getField_judul() {
+        return field_judul;
+    }
+
+    public JTextField getFiled_NIM() {
+        return field_NIM;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JButton getKembali() {
+        return kembali;
+    }
+
+    public JLabel getLabel_NIM() {
+        return label_NIM;
+    }
+
+    public JLabel getLabel_judul() {
+        return label_judul;
+    }
+
+    public JLabel getLabel_judulTA() {
+        return label_judulTA;
+    }
+
+    public JButton getTambah() {
+        return tambah;
+    }
+    
+    public void addListener(ActionListener e){
+        tambah.addActionListener(e);
+        kembali.addActionListener(e);
+    }
+    public void reset(){
+        field_NIM.setText("");
+        field_judul.setText("");
+    }
+    public String getIdMahasiswa(){
+        return field_NIM.getText();
+    }
+    public String getJudul(){
+        return field_judul.getText();
+    }
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,7 +84,7 @@ public class Create_tugas_akhir extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         label_judul = new javax.swing.JLabel();
         label_NIM = new javax.swing.JLabel();
-        filed_NIM = new javax.swing.JTextField();
+        field_NIM = new javax.swing.JTextField();
         label_judulTA = new javax.swing.JLabel();
         field_judul = new javax.swing.JTextField();
         tambah = new javax.swing.JButton();
@@ -49,6 +103,11 @@ public class Create_tugas_akhir extends javax.swing.JFrame {
         label_judulTA.setText("Judul TA");
 
         tambah.setText("Tambahkan");
+        tambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tambahActionPerformed(evt);
+            }
+        });
 
         kembali.setText("Kembali");
 
@@ -72,7 +131,7 @@ public class Create_tugas_akhir extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label_judul)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(filed_NIM, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                                .addComponent(field_NIM, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
                                 .addComponent(field_judul)))))
                 .addContainerGap(69, Short.MAX_VALUE))
         );
@@ -84,7 +143,7 @@ public class Create_tugas_akhir extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_NIM)
-                    .addComponent(filed_NIM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(field_NIM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
@@ -113,6 +172,10 @@ public class Create_tugas_akhir extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tambahActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,8 +213,8 @@ public class Create_tugas_akhir extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField field_NIM;
     private javax.swing.JTextField field_judul;
-    private javax.swing.JTextField filed_NIM;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton kembali;
     private javax.swing.JLabel label_NIM;

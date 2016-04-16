@@ -4,6 +4,8 @@
   <NonVisualComponents>
     <Component class="javax.swing.JScrollBar" name="jScrollBar1">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="LP">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -178,11 +180,17 @@
         </Component>
         <Component class="javax.swing.JRadioButton" name="L">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="LP"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="L"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JRadioButton" name="P">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="LP"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="P"/>
           </Properties>
         </Component>

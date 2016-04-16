@@ -5,9 +5,14 @@
  */
 package ViewTubes;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+
 /**
  *
- * @author lannyspt
+ * @author Martcel
  */
 public class View_Tugas_akhir extends javax.swing.JFrame {
 
@@ -18,6 +23,38 @@ public class View_Tugas_akhir extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getCari() {
+        return cari;
+    }
+
+    public JTextField getCariId() {
+        return cariId;
+    }
+
+    public JButton getKembali() {
+        return kembali;
+    }
+
+    public JTextField getOutputJudul() {
+        return outputJudul;
+    }
+    public void addListener(ActionListener e){
+        cari.addActionListener(e);
+        kembali.addActionListener(e);
+    }
+    
+    public String getIdMahasiswa(){
+         return cariId.getText();
+    }
+    public String getJudul(){
+        return outputJudul.getText();
+    }
+    
+    public void setJudul(String s){
+        outputJudul.setText(s);
+    }
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,19 +64,30 @@ public class View_Tugas_akhir extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        label_judul = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        cariId = new javax.swing.JTextField();
+        outputJudul = new javax.swing.JTextField();
+        cari = new javax.swing.JButton();
         kembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        label_judul.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        label_judul.setText("Lihat Tugas Akhir");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setText("Lihat Tugas Akhir");
 
-        jLabel1.setText("ID Mahasiswa");
+        jLabel2.setText("ID Mahasiswa");
 
-        jLabel2.setText("jLabel2");
+        jLabel3.setText("Judul Tugas Akhir");
+
+        outputJudul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                outputJudulActionPerformed(evt);
+            }
+        });
+
+        cari.setText("Cari");
 
         kembali.setText("Kembali");
 
@@ -48,37 +96,50 @@ public class View_Tugas_akhir extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(133, Short.MAX_VALUE)
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(label_judul)
-                        .addGap(129, 129, 129))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(kembali)
-                        .addGap(72, 72, 72))))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(kembali)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel3)))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cariId, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                            .addComponent(outputJudul))
+                        .addGap(28, 28, 28)
+                        .addComponent(cari)
+                        .addGap(11, 11, 11))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(label_judul)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(30, 30, 30)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(cariId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cari))
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(outputJudul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                 .addComponent(kembali)
-                .addGap(84, 84, 84))
+                .addGap(39, 39, 39))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void outputJudulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_outputJudulActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_outputJudulActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,9 +177,12 @@ public class View_Tugas_akhir extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cari;
+    private javax.swing.JTextField cariId;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton kembali;
-    private javax.swing.JLabel label_judul;
+    private javax.swing.JTextField outputJudul;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,14 @@
  */
 package ViewTubes;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author lannyspt
@@ -16,6 +24,56 @@ public class Revisi_tugas_akhir extends javax.swing.JFrame {
      */
     public Revisi_tugas_akhir() {
         initComponents();
+    }
+
+    public JTextField getField_NIM() {
+        return field_NIM;
+    }
+
+    public JTextArea getField_judulTA() {
+        return field_judulTA;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public JButton getKembali() {
+        return kembali;
+    }
+
+    public JLabel getLabel_NIM() {
+        return label_NIM;
+    }
+
+    public JLabel getLabel_judul() {
+        return label_judul;
+    }
+
+    public JLabel getLabel_judulta() {
+        return label_judulta;
+    }
+
+    public JButton getRevisi() {
+        return revisi;
+    }
+    public void addListener(ActionListener e){
+        revisi.addActionListener(e);
+        kembali.addActionListener(e);
+    }
+    public void reset(){
+        field_NIM.setText("");
+        field_judulTA.setText("");
+    }
+    public String getIdMahasiswa(){
+        return field_NIM.getText();
+    }
+    public String getJudul(){
+        return field_judulTA.getText();
     }
 
     /**
