@@ -133,7 +133,7 @@ public class Controller implements ActionListener {
                     jenis = "P";
                 }
                 model.addDosen(namaDosen, NoHp, jenis, idDosen);
-                JOptionPane.showMessageDialog(id, "Data Dosen Telah DiTambah");
+                JOptionPane.showMessageDialog(null, "Data Dosen Telah DiTambah");
 
             } else {
                 JOptionPane.showMessageDialog(null, "Data Kosong");
@@ -218,7 +218,7 @@ public class Controller implements ActionListener {
                 Mahasiswa m = model.getMahasiswa(idMahasiswa);
                 if (m != null) {
                     m.createTA(judul);
-                    JOptionPane.showMessageDialog(ct, "Judul TA Telah Terbuat");
+                    JOptionPane.showMessageDialog(null, "Judul TA Telah Terbuat");
                 } else {
                     JOptionPane.showMessageDialog(null, "ID Tidak DItemukan");
                 }
@@ -244,7 +244,7 @@ public class Controller implements ActionListener {
                 Mahasiswa m = model.getMahasiswa(idMahasiswa);
                 if (m != null) {
                     m.revisiTA(judul);
-                    JOptionPane.showMessageDialog(rta, "Judul TA Telah Di Revisi");
+                    JOptionPane.showMessageDialog(null, "Judul TA Telah Di Revisi");
                 } else {
                     JOptionPane.showMessageDialog(null, "ID Tidak DItemukan");
                 }
@@ -296,9 +296,9 @@ public class Controller implements ActionListener {
                 int urutan = ck.getUrutan2();
                 if (model.getDosen(idDosen) != null) {
                     model.MenuBuatKelompokTA(idDosen, topik, namaKelompok, urutan);
-                    JOptionPane.showMessageDialog(ck, "Data Berhasil Di Tambah");
+                    JOptionPane.showMessageDialog(null, "Data Berhasil Di Tambah");
                 } else {
-                    JOptionPane.showMessageDialog(ck, "ID Dosen Tidak Ada");
+                    JOptionPane.showMessageDialog(null, "ID Dosen Tidak Ada");
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Data Kosong");
@@ -344,7 +344,7 @@ public class Controller implements ActionListener {
             if ((topik != "") && (idDosen != "") && (idMahasiswa != "")) {
                 if ((model.getDosen(idDosen) != null) && (model.getDosen(idDosen).getKelompok(topik) != null) && (model.getMahasiswa(idMahasiswa) != null)) {
                     model.MenuTambahAnggota(topik, idDosen, idMahasiswa);
-                    JOptionPane.showMessageDialog(am, "Mahasiswa Telah Di Masukkan");
+                    JOptionPane.showMessageDialog(null, "Mahasiswa Telah Di Masukkan");
                 } else {
                     JOptionPane.showMessageDialog(null, "Data inputan Tidak ada");
                 }
