@@ -174,11 +174,11 @@ public class Controller implements ActionListener {
                 }
                 String idMahasiswa = im.getIdMahasiswa();
                 model.addMahasiswa(namaMahasiswa, noHp, jenis, idMahasiswa);
-                JOptionPane.showMessageDialog(im, "Data Mahasiswa berhasil di Tambahkan");
+                JOptionPane.showMessageDialog(null, "Data Mahasiswa berhasil di Tambahkan");
 
             } else {
                 JOptionPane.showMessageDialog(null, "Data Kosong");
-                //im.reset();
+                
             }
             im.reset();
 
