@@ -203,7 +203,7 @@ public class Aplikasi {
                 mainMenu();
                 break;
             case 5:
-                System.out.println("Lihat Kelompok berdasarkan Topik TA = ");
+                System.out.println("Lihat Anggota  Kelompok berdasarkan Topik TA = ");
                 String cariTopik = s.next();
                 System.out.println("Masukan id dosen yang ingin melihat =");
                 String nomer2 = s.next();

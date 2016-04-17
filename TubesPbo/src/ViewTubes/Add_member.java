@@ -77,7 +77,18 @@ public class Add_member extends javax.swing.JFrame {
     public JLabel getLabel_judul() {
         return label_judul;
     }
-    
+     public String getTopik(){
+         return field_topikta.getText();
+     }
+     
+     public String getID_dosen(){
+         return field_ID.getText();
+     }
+     public String getID_mahasiswa(){
+         return field_NIM.getText();
+     }
+         
+     
 
    
     

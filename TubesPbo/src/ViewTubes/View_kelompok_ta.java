@@ -108,6 +108,12 @@ public class View_kelompok_ta extends javax.swing.JFrame {
         cari.addActionListener(e);
         kembali.addActionListener(e);
     }
+    public String getID(){
+        return field_ID.getText();
+    }
+    public String getTopik(){
+        return field_topik.getText();
+    }
     
     /*public String getID(){
         

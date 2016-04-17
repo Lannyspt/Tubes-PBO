@@ -12,6 +12,7 @@ import tubespbo.Aplikasi;
 import java.util.*;
 import javax.swing.*;
 import tubespbo.Dosen;
+import tubespbo.KelompokTA;
 import tubespbo.Mahasiswa;
 
 /**
@@ -89,6 +90,11 @@ public class Controller implements ActionListener {
             ll.addListener(this);
             ld.setVisible(false);
         }
+        if (e.getSource().equals(md.getKeluar())) {
+            ll.setVisible(true);
+            ll.addListener(this);
+            md.setVisible(false);
+        }
 
         if (e.getSource().equals(lm.getMasuk())) {
             if ((lm.getNama().equals("Mahasiswa")) && (lm.getIdMahasiswa().equals("1301140124"))) {
@@ -103,6 +109,11 @@ public class Controller implements ActionListener {
             ll.addListener(this);
             lm.setVisible(false);
 
+        }
+        if (e.getSource().equals(mmhs.getKeluar())) {
+            ll.setVisible(true);
+            ll.addListener(this);
+            mmhs.setVisible(false);
         }
 
         if (e.getSource().equals(md.getMasukData())) {
@@ -125,7 +136,7 @@ public class Controller implements ActionListener {
                 JOptionPane.showMessageDialog(am, "Data Dosen Telah DiTambah");
                 id.reset();
             } else {
-                JOptionPane.showMessageDialog(am, "Data Kosong", "Error!!!", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(am, "Data Kosong");
                 id.reset();
             }
         }
@@ -166,7 +177,7 @@ public class Controller implements ActionListener {
                 JOptionPane.showMessageDialog(am, "Data Mahasiswa berhasil di Tambahkan");
 
             } else {
-                JOptionPane.showMessageDialog(am, "Data Kosong", "Error!!!", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(am, "Data Kosong");
                 //im.reset();
             }
             im.reset();
@@ -210,11 +221,11 @@ public class Controller implements ActionListener {
                     ct.reset();
                     JOptionPane.showMessageDialog(am, "Judul TA Telah Terbuat");
                 } else {
-                    JOptionPane.showMessageDialog(am, "ID Tidak DItemukan", "ERORR!!", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(am, "ID Tidak DItemukan");
 
                 }
             } else {
-                JOptionPane.showMessageDialog(am, "Data Belum Di Input", "Error !!", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(am, "Data Belum Di Input");
             }
         }
         if (e.getSource().equals(ct.getKembali())) {
@@ -237,11 +248,11 @@ public class Controller implements ActionListener {
                     rta.reset();
                     JOptionPane.showMessageDialog(am, "Judul TA Telah Di Revisi");
                 } else {
-                    JOptionPane.showMessageDialog(am, "ID Tidak DItemukan", "ERORR!!", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(am, "ID Tidak DItemukan");
 
                 }
             } else {
-                JOptionPane.showMessageDialog(am, "Data Belum Di Input", "Error !!", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(am, "Data Belum Di Input");
 
             }
         }
@@ -262,10 +273,10 @@ public class Controller implements ActionListener {
                 if (m2 != null) {
                     vta.setJudul(m2.getRevisiTA());
                 } else {
-                    JOptionPane.showMessageDialog(am, "ID Tidak DiTemukan", "Erorr!!", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(am, "ID Tidak DiTemukan");
                 }
             } else {
-                JOptionPane.showMessageDialog(am, "Data Belum di Input", "Error", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(am, "Data Belum di Input");
             }
         }
         if (e.getSource().equals(vta.getKembali())) {
@@ -295,23 +306,58 @@ public class Controller implements ActionListener {
                     model.MenuBuatKelompokTA(idDosen, topik, namaKelompok, urutan);
                     JOptionPane.showMessageDialog(am, "Data Berhasil Di Tambah");
                 } else {
-                    JOptionPane.showMessageDialog(am, "ID Dosen Tidak Ada", "Error!!!", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(am, "ID Dosen Tidak Ada");
                 }
             } else {
-                JOptionPane.showMessageDialog(am, "Data Kosong", "Error!!!", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(am, "Data Kosong");
                 //im.reset();
             }
             im.reset();
         }
-        if(e.getSource().equals(ck.getKembali())){
+        if (e.getSource().equals(ck.getKembali())) {
             md.setVisible(true);
             md.addListener(this);
             ck.setVisible(false);
         }
-        /*if(e.getSource().equals(md.getLihatKelempok())){
-            vkt.
-        }*/
+        if (e.getSource().equals(md.getLihatKelempok())) {
+            vkt.setVisible(true);
+            vkt.addListener(this);
+            md.setVisible(false);
+        }
 
-        
+        if (e.getSource().equals(vkt.getCari())) {
+            String id = vkt.getID();
+            String topik = vkt.getTopik();
+            Dosen d3 = model.getDosen(id);
+            KelompokTA ka = d3.getKelompok(topik);
+            vkt.tampildata3(ka);
+        }
+
+        if (e.getSource().equals(md.getTambahAnggota())) {
+            am.setVisible(true);
+            am.addListener(this);
+            md.setVisible(false);
+        }
+
+        if (e.getSource().equals(am.getTambahkan())) {
+            String topik = am.getTopik();
+            String idDosen = am.getID_dosen();
+            String idMahasiswa = am.getID_mahasiswa();
+            if ((topik != "") && (idDosen != "") && (idMahasiswa != "")) {
+                if ((model.getDosen(idDosen)!=null) && (model.getDosen(idDosen).getKelompok(topik) != null) && (model.getMahasiswa(idMahasiswa) != null)) {
+                    model.MenuTambahAnggota(topik, idDosen, idMahasiswa);
+                    JOptionPane.showMessageDialog(am, "Mahasiswa Telah Di Masukkan");
+                } else {
+                    JOptionPane.showMessageDialog(am, "Data inputan Tidak ada");
+                }
+            } else {
+                JOptionPane.showMessageDialog(am, "Data kosong!!");
+            }
+        }
+        if(e.getSource().equals(am.getKembali())){
+            md.setVisible(true);
+            md.addListener(this);
+            am.setVisible(false);
+        }
     }
 }
