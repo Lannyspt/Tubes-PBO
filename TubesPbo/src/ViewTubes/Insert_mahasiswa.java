@@ -55,10 +55,6 @@ public class Insert_mahasiswa extends javax.swing.JFrame {
         return field_NoHp;
     }
 
-    public JOptionPane getjOptionPane1() {
-        return jOptionPane1;
-    }
-
     public JPanel getjPanel1() {
         return jPanel1;
     }
@@ -82,16 +78,17 @@ public class Insert_mahasiswa extends javax.swing.JFrame {
     public JLabel getLabel_nohp() {
         return label_nohp;
     }
-    
-    public void addListener(ActionListener e){
+
+    public void addListener(ActionListener e) {
         Kembali.addActionListener(e);
         Tambah.addActionListener(e);
-        
+
     }
-    public String RB(){
-        if(L.isSelected()){
+
+    public String RB() {
+        if (L.isSelected()) {
             return "p";
-        } else{
+        } else {
             return "L";
         }
     }
@@ -99,17 +96,20 @@ public class Insert_mahasiswa extends javax.swing.JFrame {
     public ButtonGroup getLP() {
         return LP;
     }
-    public String getNamaMahasiswa(){
+
+    public String getNamaMahasiswa() {
         return field_nama.getText();
     }
-    public String getNoHp(){
+
+    public String getNoHp() {
         return field_NoHp.getText();
     }
-    public String getIdMahasiswa(){
+
+    public String getIdMahasiswa() {
         return field_NIM.getText();
     }
-    
-    public void reset(){
+
+    public void reset() {
         field_nama.setText("");
         field_NoHp.setText("");
         field_NIM.setText("");
@@ -124,7 +124,6 @@ public class Insert_mahasiswa extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jOptionPane1 = new javax.swing.JOptionPane();
         LP = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         label_judul = new javax.swing.JLabel();
@@ -257,37 +256,37 @@ public class Insert_mahasiswa extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Insert_mahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Insert_mahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Insert_mahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Insert_mahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Insert_mahasiswa().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(Insert_mahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(Insert_mahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(Insert_mahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(Insert_mahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Insert_mahasiswa().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Kembali;
@@ -298,7 +297,6 @@ public class Insert_mahasiswa extends javax.swing.JFrame {
     private javax.swing.JTextField field_NIM;
     private javax.swing.JTextField field_NoHp;
     private javax.swing.JTextField field_nama;
-    private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel label_NIM;
     private javax.swing.JLabel label_jeniskelamin;

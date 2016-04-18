@@ -56,10 +56,6 @@ public class insert_dosen extends javax.swing.JFrame {
         return jPanel1;
     }
 
-    public JScrollBar getjScrollBar1() {
-        return jScrollBar1;
-    }
-
     public JButton getKembali() {
         return kembali;
     }
@@ -87,38 +83,39 @@ public class insert_dosen extends javax.swing.JFrame {
     public ButtonGroup getLP() {
         return LP;
     }
-    public String RB(){
-        if(L.isSelected()){
+
+    public String RB() {
+        if (L.isSelected()) {
             return "p";
-        } else{
+        } else {
             return "L";
         }
     }
-    
-    public String getIdDosen(){
+
+    public String getIdDosen() {
         return field_ID.getText();
     }
-    
-    public String getNamaDosen(){
+
+    public String getNamaDosen() {
         return field_nama.getText();
     }
-    public String getNoHpDosen(){
+
+    public String getNoHpDosen() {
         return field_NoHp.getText();
     }
-    
-    public void addListener(ActionListener e){
-       Tambah.addActionListener(e);
-       kembali.addActionListener(e);
+
+    public void addListener(ActionListener e) {
+        Tambah.addActionListener(e);
+        kembali.addActionListener(e);
     }
-    public void reset(){
+
+    public void reset() {
         field_ID.setText("");
         field_nama.setText("");
         field_NoHp.setText("");
-        
-    }
-   
 
-   
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -128,7 +125,6 @@ public class insert_dosen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollBar1 = new javax.swing.JScrollBar();
         LP = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         label_judul = new javax.swing.JLabel();
@@ -269,37 +265,37 @@ public class insert_dosen extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(insert_dosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(insert_dosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(insert_dosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(insert_dosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new insert_dosen().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(insert_dosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(insert_dosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(insert_dosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(insert_dosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new insert_dosen().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton L;
@@ -310,7 +306,6 @@ public class insert_dosen extends javax.swing.JFrame {
     private javax.swing.JTextField field_NoHp;
     private javax.swing.JTextField field_nama;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JButton kembali;
     private javax.swing.JLabel label_ID;
     private javax.swing.JLabel label_jeniskelamin;

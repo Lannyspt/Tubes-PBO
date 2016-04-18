@@ -18,24 +18,18 @@ public class Aplikasi {
     Scanner s = new Scanner(System.in);
 
     public Aplikasi() {
-        daftarDosen =new  ArrayList<>();
+        daftarDosen = new ArrayList<>();
         daftarMahasiswa = new ArrayList<>();
     }
-    
-    
 
-     public ArrayList<Dosen> getAll()
-    {
+    public ArrayList<Dosen> getAll() {
         return daftarDosen;
     }
-      public ArrayList<Mahasiswa> getAll2()
-    {
+
+    public ArrayList<Mahasiswa> getAll2() {
         return daftarMahasiswa;
     }
 
-    
-      
-      
     public void addDosen(String nama, String noHandphone, String jenisKelamin, String idDosen) {
         Dosen d = new Dosen(nama, noHandphone, jenisKelamin, idDosen);
         daftarDosen.add(d);
@@ -84,7 +78,11 @@ public class Aplikasi {
         int i;
         Dosen d1 = null;
         d1 = getDosen(id);
-        d1.createKelompokTA(topik, namaklmpk, urutan);
+        try {
+            d1.createKelompokTA(topik, namaklmpk, urutan);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public void MenuTambahAnggota(String pilihTopik, String id2,/*int tt,*/ String indeks) {

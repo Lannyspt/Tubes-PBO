@@ -68,16 +68,17 @@ public class Controller implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
-        if (e.getSource().equals(ll.getMahasiswa())) {
+        if (source.equals(ll.getMahasiswa())) {
             lm.addListener(this);
             lm.setVisible(true);
             ll.setVisible(false);
-        } else if (e.getSource().equals(ll.getDosen())) {
+        }
+        if (source.equals(ll.getDosen())) {
             ld.addListener(this);
             ld.setVisible(true);
             ll.setVisible(false);
         }
-        if (e.getSource().equals(ld.getMasuk())) {
+        if (source.equals(ld.getMasuk())) {
             if ((ld.getNama().equals("Admin")) && (ld.getIdDosen().equals("123"))) {
                 md.setVisible(true);
                 md.addListener(this);
@@ -85,18 +86,19 @@ public class Controller implements ActionListener {
             } else {
                 JOptionPane.showMessageDialog(ld, "ERROR!!");
             }
-        } else if (e.getSource().equals(ld.getKembali())) {
+        }
+        if (source.equals(ld.getKembali())) {
             ll.setVisible(true);
             ll.addListener(this);
             ld.setVisible(false);
         }
-        if (e.getSource().equals(md.getKeluar())) {
+        if (source.equals(md.getKeluar())) {
             ll.setVisible(true);
             ll.addListener(this);
             md.setVisible(false);
         }
 
-        if (e.getSource().equals(lm.getMasuk())) {
+        if (source.equals(lm.getMasuk())) {
             if ((lm.getNama().equals("Mahasiswa")) && (lm.getIdMahasiswa().equals("1301140124"))) {
                 mmhs.setVisible(true);
                 mmhs.addListener(this);
@@ -104,24 +106,25 @@ public class Controller implements ActionListener {
             } else {
                 JOptionPane.showMessageDialog(null, "ERROR!!");
             }
-        } else if (e.getSource().equals(lm.getKembali())) {
+        }
+        if (source.equals(lm.getKembali())) {
             ll.setVisible(true);
             ll.addListener(this);
             lm.setVisible(false);
 
         }
-        if (e.getSource().equals(mmhs.getKeluar())) {
+        if (source.equals(mmhs.getKeluar())) {
             ll.setVisible(true);
             ll.addListener(this);
             mmhs.setVisible(false);
         }
 
-        if (e.getSource().equals(md.getMasukData())) {
+        if (source.equals(md.getMasukData())) {
             id.setVisible(true);
             id.addListener(this);
             md.setVisible(false);
         }
-        if (e.getSource().equals(id.getTambah())) {
+        if (source.equals(id.getTambah())) {
             if ((!id.getIdDosen().equals("")) && (!id.getNamaDosen().equals("")) && (!id.getNoHpDosen().equals(""))) {
                 String idDosen = id.getIdDosen();
                 String namaDosen = id.getNamaDosen();
@@ -136,34 +139,34 @@ public class Controller implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Data Dosen Telah DiTambah");
 
             } else {
-                JOptionPane.showMessageDialog(null, "Data Kosong");
+                JOptionPane.showMessageDialog(id, "Data Kosong");
             }
             id.reset();
         }
-        if (e.getSource().equals(md.getLihatDosen())) {
+        if (source.equals(md.getLihatDosen())) {
             vd.setVisible(true);
             vd.addListener(this);
             md.setVisible(false);
             vd.tampildata2(model);
 
         }
-        if (e.getSource().equals(vd.getKeluar())) {
+        if (source.equals(vd.getKeluar())) {
             md.setVisible(true);
             md.addListener(this);
             vd.setVisible(false);
         }
-        if (e.getSource().equals(id.getKembali())) {
+        if (source.equals(id.getKembali())) {
             md.setVisible(true);
             md.addListener(this);
             id.setVisible(false);
         }
-        if (e.getSource().equals(mmhs.getMasukkanData())) {
+        if (source.equals(mmhs.getMasukkanData())) {
             im.setVisible(true);
             im.addListener(this);
             mmhs.setVisible(false);
         }
-        if (e.getSource().equals(im.getTambah())) {
-            if ((!im.getIdMahasiswa().equals("")) && (!im.getNamaMahasiswa().equals("")) && (!im.getNoHp().equals(""))) {
+        if (source.equals(im.getTambah())) {
+            if (!im.getIdMahasiswa().equals("") && !im.getNamaMahasiswa().equals("") && !im.getNoHp().equals("")) {
                 String namaMahasiswa = im.getNamaMahasiswa();
                 String noHp = im.getNoHp();
                 String jenis = null;
@@ -175,43 +178,41 @@ public class Controller implements ActionListener {
                 String idMahasiswa = im.getIdMahasiswa();
                 model.addMahasiswa(namaMahasiswa, noHp, jenis, idMahasiswa);
                 JOptionPane.showMessageDialog(null, "Data Mahasiswa berhasil di Tambahkan");
+                im.reset();
 
             } else {
-                JOptionPane.showMessageDialog(null, "Data Kosong");
-                
+                JOptionPane.showMessageDialog(im, "Data Kosong");
             }
-            im.reset();
-
         }
-        if (e.getSource().equals(mmhs.getLihatData())) {
+        if (source.equals(mmhs.getLihatData())) {
             vm.setVisible(true);
             vm.addListener(this);
             mmhs.setVisible(false);
             vm.tampildata(model);
         }
-        if (e.getSource().equals(vm.getKembali())) {
+        if (source.equals(vm.getKembali())) {
             mmhs.setVisible(true);
             mmhs.addListener(this);
             vm.setVisible(false);
         }
-        if (e.getSource().equals(vm.getKembali())) {
+        if (source.equals(vm.getKembali())) {
             mmhs.setVisible(true);
             mmhs.addListener(this);
             vm.setVisible(false);
         }
 
-        if (e.getSource().equals(im.getKembali())) {
+        if (source.equals(im.getKembali())) {
             mmhs.setVisible(true);
             mmhs.addListener(this);
             im.setVisible(false);
         }
-        if (e.getSource().equals(mmhs.getBuatTugas())) {
+        if (source.equals(mmhs.getBuatTugas())) {
             ct.setVisible(true);
             ct.addListener(this);
             mmhs.setVisible(false);
 
         }
-        if (e.getSource().equals(ct.getTambah())) {
+        if (source.equals(ct.getTambah())) {
             if ((!ct.getIdMahasiswa().equals("")) && (!ct.getJudul().equals(""))) {
                 String idMahasiswa = ct.getIdMahasiswa();
                 String judul = ct.getJudul();
@@ -223,21 +224,21 @@ public class Controller implements ActionListener {
                     JOptionPane.showMessageDialog(null, "ID Tidak DItemukan");
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "Data Belum Di Input");
+                JOptionPane.showMessageDialog(ct, "Data Belum Di Input");
             }
             ct.reset();
         }
-        if (e.getSource().equals(ct.getKembali())) {
+        if (source.equals(ct.getKembali())) {
             mmhs.setVisible(true);
             mmhs.addListener(this);
             ct.setVisible(false);
         }
-        if (e.getSource().equals(mmhs.getRevisiTA())) {
+        if (source.equals(mmhs.getRevisiTA())) {
             rta.setVisible(true);
             rta.addListener(this);
             mmhs.setVisible(false);
         }
-        if (e.getSource().equals(rta.getRevisi())) {
+        if (source.equals(rta.getRevisi())) {
             if ((!rta.getIdMahasiswa().equals("")) && (!rta.getJudul().equals(""))) {
                 String idMahasiswa = rta.getIdMahasiswa();
                 String judul = rta.getJudul();
@@ -249,21 +250,21 @@ public class Controller implements ActionListener {
                     JOptionPane.showMessageDialog(null, "ID Tidak DItemukan");
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "Data Belum Di Input");
+                JOptionPane.showMessageDialog(rta, "Data Belum Di Input");
             }
             rta.reset();
         }
-        if (e.getSource().equals(rta.getKembali())) {
+        if (source.equals(rta.getKembali())) {
             mmhs.setVisible(true);
             mmhs.addListener(this);
             ct.setVisible(false);
         }
-        if (e.getSource().equals(mmhs.getLihatTugas())) {
+        if (source.equals(mmhs.getLihatTugas())) {
             vta.setVisible(true);
             vta.addListener(this);
             mmhs.setVisible(false);
         }
-        if (e.getSource().equals(vta.getCari())) {
+        if (source.equals(vta.getCari())) {
             if (!vta.getIdMahasiswa().equals("")) {
                 String idMahasiswa = vta.getIdMahasiswa();
                 Mahasiswa m2 = model.getMahasiswa(idMahasiswa);
@@ -273,91 +274,136 @@ public class Controller implements ActionListener {
                     JOptionPane.showMessageDialog(null, "ID Tidak DiTemukan");
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "Data Belum di Input");
+                JOptionPane.showMessageDialog(vta, "Data Belum di Input");
             }
         }
-        if (e.getSource().equals(vta.getKembali())) {
+        if (source.equals(vta.getKembali())) {
             mmhs.setVisible(true);
             mmhs.addListener(this);
             vta.setVisible(false);
         }
 
-        if (e.getSource().equals(md.getTambahKelompok())) {
+        if (source.equals(md.getTambahKelompok())) {
             ck.setVisible(true);
             ck.addListener(this);
             md.setVisible(false);
         }
 
-        if (e.getSource().equals(ck.getTambah())) {
+        if (source.equals(ck.getTambah())) {
             if ((!ck.getIdDosen().equals("")) && (!ck.getTopik().equals("")) && (!ck.getNamakelompok().equals(""))) {
                 String idDosen = ck.getIdDosen();
                 String topik = ck.getTopik();
                 String namaKelompok = ck.getNamakelompok();
-                int urutan = ck.getUrutan2();
-                if (model.getDosen(idDosen) != null) {
-                    model.MenuBuatKelompokTA(idDosen, topik, namaKelompok, urutan);
-                    JOptionPane.showMessageDialog(null, "Data Berhasil Di Tambah");
-                } else {
-                    JOptionPane.showMessageDialog(null, "ID Dosen Tidak Ada");
-                }
+                int urutan = ck.getPosition();
+
+                model.MenuBuatKelompokTA(idDosen, topik, namaKelompok, urutan);
+                JOptionPane.showMessageDialog(ck, "Data Berhasil Di Tambah");
+                ck.reset();
             } else {
-                JOptionPane.showMessageDialog(null, "Data Kosong");
+
+                JOptionPane.showMessageDialog(null, "Inputkan data", "Error!!", 0);
+
             }
-            ck.reset();
+
         }
-        
-        if (e.getSource().equals(ck.getKembali())) {
+
+        if (source.equals(ck.getKembali())) {
             md.setVisible(true);
             md.addListener(this);
             ck.setVisible(false);
         }
-        if (e.getSource().equals(md.getLihatKelempok())) {
+        if (source.equals(md.getLihatKelempok())) {
             vkt.setVisible(true);
             vkt.addListener(this);
             md.setVisible(false);
         }
 
-        if (e.getSource().equals(vkt.getCari())) {
+        if (source.equals(vkt.getCari())) {
             String id = vkt.getID();
             String topik = vkt.getTopik();
             Dosen d3 = model.getDosen(id);
             KelompokTA ka = d3.getKelompok(topik);
             vkt.tampildata3(ka);
         }
-        
-        if (e.getSource().equals(vkt.getKembali())) {
+
+        if (source.equals(vkt.getKembali())) {
             md.setVisible(true);
             md.addListener(this);
             vkt.setVisible(false);
         }
 
-        if (e.getSource().equals(md.getTambahAnggota())) {
+        if (source.equals(md.getTambahAnggota())) {
             am.setVisible(true);
             am.addListener(this);
             md.setVisible(false);
         }
 
-        if (e.getSource().equals(am.getTambahkan())) {
-            String topik = am.getTopik();
-            String idDosen = am.getID_dosen();
-            String idMahasiswa = am.getID_mahasiswa();
-            if ((topik != "") && (idDosen != "") && (idMahasiswa != "")) {
+        if (source.equals(am.getTambahkan())) {
+            if ((am.getTopik() != "") && (am.getID_dosen() != "") && (am.getID_mahasiswa() != "")) {
+                String topik = am.getTopik();
+                String idDosen = am.getID_dosen();
+                String idMahasiswa = am.getID_mahasiswa();
+
                 if ((model.getDosen(idDosen) != null) && (model.getDosen(idDosen).getKelompok(topik) != null) && (model.getMahasiswa(idMahasiswa) != null)) {
                     model.MenuTambahAnggota(topik, idDosen, idMahasiswa);
                     JOptionPane.showMessageDialog(null, "Mahasiswa Telah Di Masukkan");
+                    am.reset();
                 } else {
-                    JOptionPane.showMessageDialog(null, "Data inputan Tidak ada");
+                    JOptionPane.showMessageDialog(am, "Data inputan Tidak ada");
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Data kosong!!");
             }
-            
         }
-        if (e.getSource().equals(am.getKembali())) {
+        if (source.equals(am.getKembali())) {
             md.setVisible(true);
             md.addListener(this);
             am.setVisible(false);
         }
 
+        if (source.equals(md.getHapusDosen())) {
+            dd.setVisible(true);
+            dd.addListener(this);
+            md.setVisible(false);
+        }
+        if (source.equals(dd.getHapus())) {
+            String idDosen = dd.getField_ID().getText();
+            if (model.getDosen(idDosen) != null) {
+                model.deleteDosen(idDosen);
+                JOptionPane.showMessageDialog(null, "Dosen telah di hapus");
+                dd.reset();
+            } else {
+                JOptionPane.showMessageDialog(null, "ID Dosen Tidak ada");
+
+            }
+        }
+        if (source.equals(dd.getKembali())) {
+            md.setVisible(true);
+            md.addListener(this);
+            dd.setVisible(false);
+        }
+        if (source.equals(mmhs.getDeleteData())) {
+            dm.setVisible(true);
+            dm.addListener(this);
+            mmhs.setVisible(false);
+        }
+        if (source.equals(dm.getHapus())) {
+            if ((dm.getField_ID().getText() != "") && (dm.getField_NIM().getText() != "") && (dm.getField_topik().getText() != "")) {
+                String id = dm.getField_ID().getText();
+                String nim = dm.getField_NIM().getText();
+                String topik = dm.getField_topik().getText();
+                if (model.getDosen(id) != null && model.getMahasiswa(nim) != null && model.getDosen(id).getKelompok(topik) != null) {
+                    model.MenuHapusMahasiswa(nim, id, topik);
+                    JOptionPane.showMessageDialog(null, "Data Telah Terhapus");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Data inputan salah");
+                }
+            }
+        }
+        if(source.equals(dm.getKembali())){
+            mmhs.setVisible(true);
+            mmhs.addListener(this);
+            dm.setVisible(false);
+        }
     }
 }
