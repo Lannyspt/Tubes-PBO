@@ -426,5 +426,12 @@ public class Controller implements ActionListener {
             md.addListener(this);
             dk.dispose();
         }
+        //tekan tombol kembali di halaman hapus kelompok TA
+        if(source.equals(dk.getKembali())){
+            md.setVisible(true);
+            md.addListener(this);
+            dk.dispose();
+        }
     }
 }
+
