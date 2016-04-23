@@ -5,6 +5,11 @@
  */
 package ViewTubes;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+
 /**
  *
  * @author lannyspt
@@ -34,6 +39,7 @@ public class Delete_kelompok_ta extends javax.swing.JFrame {
         label_urutan = new javax.swing.JLabel();
         Urutan = new javax.swing.JComboBox<>();
         Hapus = new javax.swing.JButton();
+        kembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Hapus Kelompok TA");
@@ -47,9 +53,11 @@ public class Delete_kelompok_ta extends javax.swing.JFrame {
 
         label_urutan.setText("Urutan Kelompok");
 
-        Urutan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Urutan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
 
         Hapus.setText("Hapus");
+
+        kembali.setText("Kembali");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -57,22 +65,25 @@ public class Delete_kelompok_ta extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_urutan)
-                            .addComponent(label_ID))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Urutan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(field_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(label_judul)
+                        .addGap(21, 21, 21))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(label_judul)
-                                .addGap(21, 21, 21))
-                            .addComponent(Hapus))))
+                                .addComponent(kembali)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Hapus))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(label_urutan)
+                                    .addComponent(label_ID))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Urutan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(field_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(94, 94, 94))
         );
         jPanel1Layout.setVerticalGroup(
@@ -89,7 +100,9 @@ public class Delete_kelompok_ta extends javax.swing.JFrame {
                     .addComponent(label_urutan)
                     .addComponent(Urutan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
-                .addComponent(Hapus)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Hapus)
+                    .addComponent(kembali))
                 .addContainerGap(97, Short.MAX_VALUE))
         );
 
@@ -142,12 +155,58 @@ public class Delete_kelompok_ta extends javax.swing.JFrame {
 //            }
 //        });
 //    }
+    
+    public JButton getHapus() {
+        return Hapus;
+    }
+
+    public void setHapus(JButton Hapus) {
+        this.Hapus = Hapus;
+    }
+
+    public JComboBox<String> getUrutan() {
+        return Urutan;
+    }
+
+    public void setUrutan(JComboBox<String> Urutan) {
+        this.Urutan = Urutan;
+    }
+    
+    public int getPosition() {
+        return Urutan.getSelectedIndex() + 1;
+    }
+    
+    public JTextField getField_ID() {
+        return field_ID;
+    }
+
+    public void setField_ID(JTextField field_ID) {
+        this.field_ID = field_ID;
+    }
+    
+    public String getID(){
+        return field_ID.getText();
+    }
+    public void addListener(ActionListener e){
+        Hapus.addActionListener(e);
+    }
+    
+     public void reset(){
+        field_ID.setText("");
+        Urutan.setSelectedIndex(0);
+     }
+
+    public JButton getKembali() {
+        return kembali;
+    }
+     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Hapus;
     private javax.swing.JComboBox<String> Urutan;
     private javax.swing.JTextField field_ID;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton kembali;
     private javax.swing.JLabel label_ID;
     private javax.swing.JLabel label_judul;
     private javax.swing.JLabel label_urutan;
