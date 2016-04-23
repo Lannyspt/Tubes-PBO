@@ -5,17 +5,20 @@
  */
 package tubespbo;
 
+import Controller.Controller;
+
 /**
  *
- * @author Martcel
+ * @author lannyspt
  */
-public class TubesPbo {
-
-    /**
-     * @param args the command line arguments
-     */
+public class Driver {
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
+        
     
+    Aplikasi A= new Aplikasi();
+    //A.mainMenu();
+    new Controller(A);
+    
+            
+    }
 }
